@@ -3,225 +3,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>桜千株式会社 — お金のブロックパズル (2026-05-18 12:38 JST)</title>
-  <!-- Noto Sans JP (weight 300/400/500/700) -->
+  <title>桜千株式会社 — お金のブロックパズル (2026-05-18 13:01 JST)</title>
+
+  <!-- Inter (英数字) + Noto Sans JP (日本語) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ════════════════════════════════════════════════════════
+     * デザイントークン  — デジタル庁 Design System 準拠
+     * ════════════════════════════════════════════════════════ */
+    :root {
+      /* Blue family (primary) */
+      --blue-50:  #EEF2FF;
+      --blue-100: #D9E6FF;
+      --blue-300: #9DB7F9;
+      --blue-500: #4979F5;
+      --blue-700: #264AF4;
+      --blue-900: #0017C1;
 
-    body {
-      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
-      background: #f3f4f6;
-      color: #1a1a2e;
-      min-height: 100vh;
+      /* Neutrals */
+      --gray-0:   #FFFFFF;
+      --gray-50:  #FAFAFB;
+      --gray-100: #F4F5F7;
+      --gray-200: #E8EAEE;
+      --gray-300: #D5D8DE;
+      --gray-400: #A0A4AB;
+      --gray-500: #6B7280;
+      --gray-700: #3F4451;
+      --gray-900: #1A1A1A;
+
+      /* Semantic — 利益/CF 系統（落ち着いたゴールド） */
+      --gold-50:  #FFFBEB;
+      --gold-100: #FEF3C7;
+      --gold-300: #F5D070;
+      --gold-500: #C99830;
+      --gold-700: #8A6313;
+
+      /* Semantic — 粗利系統（深い緑） */
+      --green-50:  #ECFDF5;
+      --green-100: #D1FAE5;
+      --green-300: #6EE7B7;
+      --green-500: #10B981;
+      --green-700: #047857;
+
+      /* Semantic — 変動費・固定費 警告系統（控えめな赤橙） */
+      --warn-50:  #FFF7ED;
+      --warn-100: #FFEDD5;
+      --warn-300: #FDBA74;
+      --warn-500: #F97316;
+      --warn-700: #C2410C;
+
+      /* 影 */
+      --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+
+      /* Radius */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+
+      /* タイポグラフィ */
+      --font-sans: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+      --font-num:  "Inter", "Noto Sans JP", sans-serif;
     }
 
-    /* ─── ヘッダー ─────────────────────────────────────── */
-    header {
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--gray-50);
+      color: var(--gray-900);
+      min-height: 100vh;
+      line-height: 1.5;
+      font-feature-settings: "tnum" 1, "palt" 1;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * ヘッダー
+     * ════════════════════════════════════════════════════════ */
+    header.app-header {
+      background: var(--gray-0);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 20px 40px 18px;
+    }
+    .header-inner {
+      max-width: 1560px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 32px 14px;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      gap: 24px;
+      flex-wrap: wrap;
     }
-    header h1 {
-      font-size: 1.1rem;
+    .brand-block { display: flex; align-items: center; gap: 14px; }
+    .brand-mark {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--blue-500) 0%, var(--blue-700) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-md);
+      color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+    .brand-text h1 {
+      font-size: 1.05rem;
       font-weight: 700;
-      color: #111827;
+      color: var(--gray-900);
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+    .brand-text .subtitle {
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+
+    .header-controls { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    #period-label {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      padding: 8px 14px;
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.01em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 部門切替ピル */
+    .dept-pills {
+      display: inline-flex;
+      background: var(--gray-100);
+      border-radius: 9px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .dept-pills button {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      padding: 7px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
       letter-spacing: 0.02em;
     }
-    header .subtitle {
-      font-size: 0.72rem;
-      color: #9ca3af;
-      margin-top: 4px;
-      font-weight: 400;
-      letter-spacing: 0.03em;
+    .dept-pills button:hover { color: var(--gray-900); }
+    .dept-pills button.active {
+      background: var(--gray-0);
+      color: var(--blue-700);
+      font-weight: 600;
+      box-shadow: var(--shadow-xs);
     }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    #period-label {
-      font-size: 0.82rem;
-      color: #6b7280;
-      font-variant-numeric: tabular-nums;
-      font-weight: 500;
-    }
+    /* 旧 select は非表示で残す（互換用） */
+    #dept-select { display: none; }
+
     #refresh-btn {
-      padding: 8px 20px;
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      padding: 8px 16px;
+      background: var(--gray-900);
       color: #fff;
       border: none;
-      border-radius: 7px;
-      font-size: 0.82rem;
-      font-weight: 500;
+      border-radius: var(--radius-sm);
+      font-size: 0.76rem;
+      font-weight: 600;
       font-family: inherit;
       cursor: pointer;
-      transition: opacity 0.15s, box-shadow 0.15s;
-      box-shadow: 0 1px 3px rgba(37,99,235,0.35);
+      transition: background 0.15s, transform 0.05s;
       letter-spacing: 0.02em;
     }
-    #refresh-btn:hover { opacity: 0.88; box-shadow: 0 2px 6px rgba(37,99,235,0.4); }
-    #refresh-btn:disabled { background: #d1d5db; box-shadow: none; cursor: not-allowed; opacity: 1; }
+    #refresh-btn:hover { background: #000; }
+    #refresh-btn:active { transform: translateY(1px); }
+    #refresh-btn:disabled { background: var(--gray-300); color: var(--gray-500); cursor: not-allowed; }
 
-    /* ─── 部門セレクター ──────────────────────────── */
-    #dept-selector-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    /* ════════════════════════════════════════════════════════
+     * メインコンテナ
+     * ════════════════════════════════════════════════════════ */
+    main {
+      max-width: 1560px;
+      margin: 28px auto;
+      padding: 0 28px 56px;
     }
-    #dept-selector-wrap label {
-      font-size: 0.78rem;
-      color: #6b7280;
+
+    /* ════════════════════════════════════════════════════════
+     * KPI ストリップ — 上部の主要指標 4 枚
+     * ════════════════════════════════════════════════════════ */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--gray-0);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-xs);
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--blue-500);
+      border-radius: 0 2px 2px 0;
+    }
+    .kpi-card.kpi-revenue::before { background: var(--blue-500); }
+    .kpi-card.kpi-gross::before   { background: var(--green-500); }
+    .kpi-card.kpi-profit::before  { background: var(--gold-500); }
+    .kpi-card.kpi-cash::before    { background: var(--gold-700); }
+
+    .kpi-label {
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      font-family: var(--font-num);
+    }
+    .kpi-sub {
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      margin-top: 6px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
+    }
+    .kpi-sub strong {
+      color: var(--gray-700);
+      font-weight: 600;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * パズルカード — ブロックパズルのコンテナ
+     * ════════════════════════════════════════════════════════ */
+    .puzzle-card {
+      background: var(--gray-0);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+      padding: 22px 26px 26px;
+      margin-bottom: 18px;
+    }
+    .card-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .card-head h2 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: 0.01em;
+    }
+    .card-head .head-sub {
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ────  構造式チップ列 ──── */
+    .formula-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 16px;
+      padding: 10px 12px;
+      background: var(--gray-50);
+      border-radius: var(--radius-sm);
+      align-items: center;
+    }
+    .formula-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.7rem;
+      color: var(--gray-700);
+      letter-spacing: 0.02em;
       font-weight: 500;
       white-space: nowrap;
     }
-    #dept-select {
-      padding: 7px 28px 7px 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 7px;
-      font-size: 0.82rem;
-      font-family: inherit;
-      color: #374151;
-      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239ca3af' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;
-      -webkit-appearance: none;
-      appearance: none;
-      cursor: pointer;
-      min-width: 140px;
-      transition: border-color 0.15s;
-    }
-    #dept-select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.2); }
-    #dept-select:disabled { background-color: #f9fafb; color: #9ca3af; cursor: not-allowed; }
-
-    /* ─── メインコンテナ ──────────────────────────────── */
-    main {
-      max-width: 1560px;
-      margin: 24px auto;
-      padding: 0 24px 40px;
+    .formula-chip .em { font-weight: 700; }
+    .formula-chip.gross .em   { color: var(--green-700); }
+    .formula-chip.fixed .em   { color: var(--warn-700); }
+    .formula-chip.profit .em  { color: var(--gold-700); }
+    .formula-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--gray-300);
     }
 
-    /* ─── ブロックパズル外枠 ─────────────────────────── */
-    .puzzle-wrapper {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      padding: 22px 26px 22px 26px;
-      margin-bottom: 18px;
+    .formula-note {
+      font-size: 0.66rem;
+      color: var(--gray-400);
+      margin-bottom: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* ──── 配賦注記（クラスタ時のみ）──── */
+    #cluster-allocation-note {
+      display: none;
+      font-size: 0.72rem;
+      color: var(--warn-700);
+      margin-bottom: 16px;
+      padding: 9px 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      background: var(--warn-50);
+      border-left: 3px solid var(--warn-500);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * パズル本体 + CF 拡張を横並びにするフレックス
+     * ════════════════════════════════════════════════════════ */
+    .puzzle-row-wrap {
       overflow-x: auto;
       overflow-y: visible;
+      margin: 0 -2px;  /* スクロールバー領域確保 */
+      padding: 2px;
     }
-    .puzzle-title {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: #9ca3af;
-      margin-bottom: 16px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ─── パズル本体 + CF 拡張を横並びにするフレックスコンテナ ─── */
     .puzzle-row {
       display: flex;
       align-items: flex-start;
-      border: 1.5px solid #d1d5db;
-      border-radius: 4px;
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      padding: 14px;
       overflow: visible;
+      min-width: 1100px;  /* モバイルでも横スクロールで全体が見える */
     }
 
-    /* ─── パズル本体コンテナ ─────────────────────────── */
+    /* パズル本体コンテナ */
     #puzzle-canvas {
       position: relative;
       flex: 1 1 auto;
       min-width: 0;
-      border: none;       /* 外枠は .puzzle-row に移譲 */
-      border-radius: 0;
+      border-radius: var(--radius-sm);
       overflow: hidden;
     }
 
-    /* ─── CF 拡張コンテナ（puzzle-rowの右側） ─────────── */
+    /* CF 拡張コンテナ（puzzle-row 右側） */
     #cf-extension-row {
       position: relative;
       flex: 0 0 auto;
-      /* 修正: 本体との境界線は薄めにして「お金の流れ」が継続する印象を残す */
-      border-left: 1px dashed #d1d5db;
+      margin-left: 14px;
+      padding-left: 14px;
+      border-left: 1px solid var(--gray-200);
       overflow: visible;
-      /* CF パネル全体を本体と同じ縦長セクションとして示す薄い背景 */
-      background: linear-gradient(180deg, rgba(254, 243, 199, 0.0) 0%, rgba(254, 243, 199, 0.06) 50%, rgba(254, 243, 199, 0.18) 100%);
     }
 
-    /* CF 拡張パネルの上部ヘッダー（"キャッシュフロー生成プロセス" タイトル） */
-    .cf-section-header {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      padding: 10px 8px 6px;
-      text-align: center;
-      pointer-events: none;
-      z-index: 8;
-    }
-    .cf-section-header .cf-section-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #6b5d3a;
-      letter-spacing: 0.08em;
-      line-height: 1.3;
-    }
-    .cf-section-header .cf-section-sub {
-      font-size: 0.62rem;
-      color: #9ca3af;
-      margin-top: 2px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
-
-    /* CF 流れ表示：ステップ番号バッジ（① ② ③） */
-    .cf-step-badge {
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #92400e;
-      color: #fff;
-      font-size: 0.62rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-      z-index: 6;
-    }
-
-    /* CF 流れ表示：演算子（+ / =） */
-    .cf-operator {
-      position: absolute;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #92400e;
-      z-index: 12;
-      pointer-events: none;
-      background: #fff;
-      border: 1.5px solid #fed7aa;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    }
-
-    /* ─── 各ブロック（absolute配置） ─────────────────── */
+    /* ════════════════════════════════════════════════════════
+     * 各ブロック（absolute配置）
+     * ════════════════════════════════════════════════════════ */
     .bp-cell {
       position: absolute;
       display: flex;
@@ -229,23 +380,27 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      transition: filter 0.15s;
     }
+    .bp-cell:hover { filter: brightness(0.98); }
+
     .bp-cell .cell-label,
     .fixed-sub-cell .cell-label {
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.82rem;
+      font-weight: 600;
       text-align: center;
-      line-height: 1.4;
+      line-height: 1.35;
       letter-spacing: 0.02em;
     }
     .bp-cell .cell-amount,
     .fixed-sub-cell .cell-amount {
       font-size: 1.05rem;
-      font-weight: 600;
-      margin-top: 5px;
+      font-weight: 700;
+      margin-top: 6px;
       text-align: center;
       font-variant-numeric: tabular-nums;
       letter-spacing: -0.01em;
+      font-family: var(--font-num);
     }
 
     /* 固定費内部の人件費・その他固定費（flex子として積む） */
@@ -260,285 +415,340 @@
       overflow: hidden;
     }
 
-    /* 配色（洗練されたパステル〜ミディアムトーン） */
-    /* 修正5: 境界線を復活 — 影+border で区切りをはっきり */
-    .cell-revenue   { background: #bfdbfe; color: #1e3a8a; border: 1px solid rgba(0,0,0,0.06); }
-    .cell-variable  { background: #e5e7eb; color: #374151; border: 1px solid rgba(0,0,0,0.06); }
-    .cell-gross     { background: #d1fae5; color: #065f46; border: 1px solid rgba(0,0,0,0.06); }
-    .cell-fixed     { background: #fff7ed; border: 2px solid #fed7aa; }
-    .cell-personnel { background: #f3f4f6; color: #4b5563; border: 1px solid rgba(0,0,0,0.06); }
-    .cell-other     { background: #e5e7eb; color: #4b5563; border: 1px solid rgba(0,0,0,0.06); }
-    .cell-profit    { background: #fef3c7; color: #92400e; border: 1px solid rgba(0,0,0,0.06); }
+    /* ──── 配色（一貫したカラーシステム）──── */
+    .cell-revenue   { background: var(--blue-100);  color: var(--blue-900); }
+    .cell-variable  { background: var(--gray-100);  color: var(--gray-700); }
+    .cell-gross     { background: var(--green-100); color: var(--green-700); }
+    .cell-fixed     { background: var(--warn-50);   color: var(--warn-700); }
+    .cell-personnel { background: var(--gray-50);   color: var(--gray-700); }
+    .cell-other     { background: var(--gray-100);  color: var(--gray-700); }
+    .cell-profit    { background: var(--gold-100);  color: var(--gold-700); }
 
-    /* ラベル・金額の文字色を親から継承 */
-    .cell-revenue .cell-label,   .cell-revenue .cell-amount   { color: #1e3a8a; }
-    .cell-variable .cell-label,  .cell-variable .cell-amount  { color: #374151; }
-    .cell-gross .cell-label,     .cell-gross .cell-amount     { color: #065f46; }
-    .cell-personnel .cell-label, .cell-personnel .cell-amount { color: #4b5563; }
-    .cell-other .cell-label,     .cell-other .cell-amount     { color: #4b5563; }
-    .cell-profit .cell-label,    .cell-profit .cell-amount    { color: #92400e; }
+    .cell-revenue .cell-label,   .cell-revenue .cell-amount   { color: var(--blue-900); }
+    .cell-variable .cell-label,  .cell-variable .cell-amount  { color: var(--gray-700); }
+    .cell-gross .cell-label,     .cell-gross .cell-amount     { color: var(--green-700); }
+    .cell-personnel .cell-label, .cell-personnel .cell-amount { color: var(--gray-700); }
+    .cell-other .cell-label,     .cell-other .cell-amount     { color: var(--gray-700); }
+    .cell-profit .cell-label,    .cell-profit .cell-amount    { color: var(--gold-700); }
 
-    /* 楕円バッジ（puzzle-canvas 相対で absolute配置） */
-    .oval-badge {
+    /* ──── インラインタグ（粗利率・労働分配率）──── */
+    /* 旧 oval-badge を置き換え。ブロックの角に控えめに配置 */
+    .inline-tag {
       position: absolute;
-      background: radial-gradient(circle at 30% 30%, #ffffff, #f9fafb);
-      border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
+      background: var(--gray-0);
+      border: 1px solid var(--gray-200);
+      border-radius: 999px;
+      padding: 5px 12px;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 9px 20px;
+      gap: 6px;
       white-space: nowrap;
       z-index: 20;
       pointer-events: none;
-      min-width: 108px;
-      min-height: 60px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      box-shadow: var(--shadow-sm);
+      font-family: var(--font-num);
     }
-    .oval-badge .badge-label {
-      font-size: 0.68rem;
-      color: #6b7280;
-      line-height: 1.2;
-      text-align: center;
-      font-weight: 500;
+    .inline-tag .tag-label {
+      font-size: 0.66rem;
+      color: var(--gray-500);
+      font-weight: 600;
       letter-spacing: 0.04em;
     }
-    .oval-badge .badge-value {
-      font-size: 0.92rem;
+    .inline-tag .tag-value {
+      font-size: 0.82rem;
+      color: var(--gray-900);
       font-weight: 700;
-      color: #111827;
-      line-height: 1.3;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+    }
+
+    /* ──── 本社経費オーバーレイ（クラスタ表示時のみ）──── */
+    .hq-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      pointer-events: none;
+      z-index: 4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hq-overlay-top {
+      width: 100%;
+      background: rgba(249, 115, 22, 0.18);
+      border-bottom: 1px dashed rgba(194, 65, 12, 0.5);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 4px 4px 3px;
+      min-height: 0;
+    }
+    .hq-overlay-label {
+      font-size: 0.58rem;
+      color: var(--warn-700);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hq-overlay-pct {
+      font-size: 0.66rem;
+      color: var(--warn-700);
+      font-weight: 700;
+      line-height: 1.2;
       font-variant-numeric: tabular-nums;
     }
 
-    /* ローディング */
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 200px;
-      font-size: 0.95rem;
-      color: #9ca3af;
-      font-weight: 400;
-    }
-    .error-msg {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      border-radius: 8px;
-      padding: 16px 20px;
-      color: #991b1b;
-      margin: 20px 0;
-      font-size: 0.9rem;
-    }
-
-    /* ── AI コメント ─────────────────────────────────── */
-    .commentary-card {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      padding: 20px 26px;
-      margin-bottom: 18px;
-    }
-    .commentary-card h2 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #374151;
-      margin-bottom: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    #commentary-text {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: #374151;
-      font-weight: 400;
-    }
-
-    /* ─── CF 拡張エリア ────────────────────────────── */
-    .cf-extension {
-      position: relative;
-      overflow: visible;
-    }
+    /* ════════════════════════════════════════════════════════
+     * CF 拡張エリア — シンプル化（前バージョンの ①②③ バッジ等は撤廃）
+     * ════════════════════════════════════════════════════════ */
     .cf-cell {
       position: absolute;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: visible;  /* step-badge を外側にはみ出させない範囲で表示するため hidden → visible */
+      overflow: hidden;
       text-align: center;
-      /* 修正5: 境界線を復活（影だけでなく明示的な border） */
-      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 4px;
+      transition: filter 0.15s;
     }
+    .cf-cell:hover { filter: brightness(0.98); }
     .cf-cell .cf-label {
-      font-size: 0.78rem;
-      font-weight: 500;
+      font-size: 0.74rem;
+      font-weight: 600;
       line-height: 1.3;
-      text-align: center;
       letter-spacing: 0.02em;
     }
     .cf-cell .cf-amount {
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
       margin-top: 4px;
-      text-align: center;
       font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+      font-family: var(--font-num);
     }
-    /* CF 配色（修正3: ベージュ系に統一、本家準拠） */
-    .cell-tax          { background: #fafafa; }  /* 法人税等: 薄グレー */
-    .cell-tax .cf-label, .cell-tax .cf-amount    { color: #525252; }
-    .cell-net-income   { background: #fff9e6; }  /* 税引後利益: 薄ベージュ */
-    .cell-net-income .cf-label, .cell-net-income .cf-amount { color: #6b5d3a; }
-    .cell-depreciation { background: #f5f5f5; }  /* 減価償却費: 薄グレー */
-    .cell-depreciation .cf-label, .cell-depreciation .cf-amount { color: #525252; }
-    .cell-cash-gen     { background: #fff0d6; }  /* CF生成額: 黄味ベージュ */
+    .cell-tax          { background: var(--gray-50);  }
+    .cell-tax .cf-label, .cell-tax .cf-amount    { color: var(--gray-700); }
+    .cell-net-income   { background: var(--gold-50); }
+    .cell-net-income .cf-label, .cell-net-income .cf-amount { color: var(--gold-700); }
+    .cell-depreciation { background: var(--gray-100); }
+    .cell-depreciation .cf-label, .cell-depreciation .cf-amount { color: var(--gray-700); }
+    .cell-cash-gen     { background: var(--gold-100); border: 1.5px solid var(--gold-300); }
+    .cell-cash-gen .cf-label, .cell-cash-gen .cf-amount     { color: var(--gold-700); }
+    .cell-cash-gen .cf-amount { font-size: 0.95rem; }
 
-    /* 矢印 SVG */
-    .cf-arrow-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      overflow: visible;
-      pointer-events: none;
-      z-index: 10;
+    .cf-cell .cf-foot {
+      font-size: 0.58rem;
+      color: var(--gold-700);
+      opacity: 0.75;
+      margin-top: 4px;
+      line-height: 1.4;
+      padding: 0 4px;
+      font-weight: 500;
     }
 
-    /* ── 内訳テーブル（折りたたみ）──────────────────── */
-    .breakdown-section {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      padding: 0;
+    /* CF 上部の小ヘッダー（控えめ） */
+    .cf-section-mini {
+      font-size: 0.66rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      padding-left: 2px;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * AI コメントカード
+     * ════════════════════════════════════════════════════════ */
+    .commentary-card {
+      background: var(--gray-0);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+      padding: 22px 26px;
       margin-bottom: 18px;
+    }
+    .commentary-card h2 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .commentary-card h2::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue-500);
+      box-shadow: 0 0 0 3px var(--blue-50);
+    }
+    #commentary-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--gray-700);
+      font-weight: 400;
+      white-space: pre-wrap;
+    }
+    #commentary-text:empty::after {
+      content: "（コメント取得中...）";
+      color: var(--gray-400);
+      font-size: 0.85rem;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * 内訳テーブル
+     * ════════════════════════════════════════════════════════ */
+    .breakdown-section {
+      background: var(--gray-0);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
       overflow: hidden;
+      margin-bottom: 18px;
     }
     .breakdown-section > details > summary {
       font-size: 0.82rem;
       font-weight: 600;
-      color: #6b7280;
-      letter-spacing: 0.05em;
-      padding: 14px 26px;
+      color: var(--gray-700);
+      letter-spacing: 0.02em;
+      padding: 16px 26px;
       cursor: pointer;
       user-select: none;
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 6px;
-      border-bottom: 1px solid transparent;
+      gap: 10px;
       transition: background 0.1s;
     }
-    .breakdown-section > details > summary:hover { background: #f9fafb; }
-    .breakdown-section > details[open] > summary { border-bottom-color: #e5e7eb; }
     .breakdown-section > details > summary::-webkit-details-marker { display: none; }
-    .breakdown-inner { padding: 18px 26px 22px; }
+    .breakdown-section > details > summary::before {
+      content: "";
+      width: 8px; height: 8px;
+      border-right: 1.5px solid var(--gray-500);
+      border-bottom: 1.5px solid var(--gray-500);
+      transform: rotate(-45deg);
+      transition: transform 0.15s;
+    }
+    .breakdown-section > details[open] > summary::before {
+      transform: rotate(45deg);
+    }
+    .breakdown-section > details > summary:hover { background: var(--gray-50); }
+    .breakdown-section > details[open] > summary { border-bottom: 1px solid var(--gray-200); }
+    .breakdown-inner { padding: 20px 26px 24px; }
     .breakdown-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      gap: 24px;
     }
     .breakdown-col h3 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #6b7280;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gray-500);
       margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 1.5px solid #e5e7eb;
-      letter-spacing: 0.04em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-200);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .breakdown-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 6px 0;
-      border-bottom: 1px solid #f3f4f6;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
       font-size: 0.82rem;
     }
-    .breakdown-item .item-name { color: #4b5563; flex: 1; padding-right: 8px; font-weight: 400; }
-    .breakdown-item .item-amount { font-weight: 600; color: #111827; white-space: nowrap; font-variant-numeric: tabular-nums; }
-    .breakdown-item .item-pct { font-size: 0.70rem; color: #9ca3af; margin-left: 6px; white-space: nowrap; }
+    .breakdown-item:last-child { border-bottom: none; }
+    .breakdown-item .item-name { color: var(--gray-700); flex: 1; padding-right: 8px; font-weight: 400; }
+    .breakdown-item .item-amount { font-weight: 600; color: var(--gray-900); white-space: nowrap; font-variant-numeric: tabular-nums; font-family: var(--font-num); }
+    .breakdown-item .item-pct { font-size: 0.68rem; color: var(--gray-400); margin-left: 8px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-    /* ── 本社経費ビジュアル分離（クラスタ表示時のみ） ─────────────── */
-    /* セル内 absolute で上端に薄い帯を重ねる（本社配賦分 = 上 N%） */
-    .hq-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      z-index: 4;
+    /* ════════════════════════════════════════════════════════
+     * ローディング / エラー
+     * ════════════════════════════════════════════════════════ */
+    .loading {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-    }
-    /* 本社経費配賦帯（上段: 薄オレンジ） */
-    .hq-overlay-top {
-      width: 100%;
-      background: rgba(251, 146, 60, 0.28);  /* 薄オレンジ半透明 */
-      border-bottom: 1.5px dashed rgba(234, 88, 12, 0.55);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3px 4px 2px;
-      min-height: 0;
-    }
-    .hq-overlay-label {
-      font-size: 0.58rem;
-      color: #9a3412;
-      font-weight: 600;
-      line-height: 1.3;
-      text-align: center;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-    }
-    .hq-overlay-pct {
-      font-size: 0.62rem;
-      color: #c2410c;
-      font-weight: 700;
-      line-height: 1.2;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-    /* 利益セルの本社経費注記（プラス表示）→ ビジュアル分離に統一するので不要になるが念のため残す */
-    .hq-note-profit {
-      font-size: 0.62rem;
-      color: #b45309;
-      opacity: 0.82;
-      margin-top: 4px;
-      text-align: center;
-      line-height: 1.45;
+      height: 240px;
+      font-size: 0.9rem;
+      color: var(--gray-400);
       font-weight: 500;
-      letter-spacing: 0.01em;
-      width: 90%;
+      letter-spacing: 0.02em;
+    }
+    .error-msg {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      color: #991B1B;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    /* ════════════════════════════════════════════════════════
+     * レスポンシブ
+     * ════════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .puzzle-row { overflow-x: auto; }
+    }
+    @media (max-width: 720px) {
+      header.app-header { padding: 14px 18px; }
+      main { padding: 0 16px 32px; margin: 18px auto; }
+      .kpi-strip { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .kpi-card { padding: 14px 16px; }
+      .kpi-value { font-size: 1.3rem; }
+      .puzzle-card { padding: 18px 16px; }
+      .puzzle-row { padding: 8px; }
+      .formula-row { font-size: 0.66rem; }
+    }
+
+    /* 印刷 */
+    @media print {
+      body { background: #fff; }
+      header.app-header { box-shadow: none; }
+      .puzzle-card, .commentary-card, .kpi-card, .breakdown-section {
+        box-shadow: none;
+        border: 1px solid var(--gray-300);
+        page-break-inside: avoid;
+      }
+      #refresh-btn { display: none; }
     }
   </style>
 <script>
-window.__BUILD_DATE_JST__ = "2026-05-18 12:38 JST";
-window.__EMBEDDED_DATA__ = {"build_timestamp":"2026-05-18T12:38:10.810550+09:00","build_date_jst":"2026-05-18 12:38 JST","全社合計":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":157341582,"revenue_breakdown":[{"name":"工事売上高","value":121531897},{"name":"就労移行支援売上高","value":35714210},{"name":"就労定着支援売上高","value":28880},{"name":"総務売上高","value":51595},{"name":"その他売上高","value":15000}],"variable_cost":63101245,"variable_breakdown":[{"name":"外注加工費(製)","value":61135891},{"name":"外注費","value":1743588},{"name":"産廃処分費","value":152713},{"name":"商品仕入高","value":58094},{"name":"荷造運賃","value":10959}],"gross_profit":94240337,"fixed_cost":70935697,"personnel_cost":30787873,"other_fixed_cost":40147824,"personnel_breakdown":[{"name":"給料賃金","value":16961372},{"name":"給料賃金(製)","value":4781593},{"name":"役員報酬","value":3000000},{"name":"法定福利費","value":2668237},{"name":"賞与","value":1144347},{"name":"法定福利費(製)","value":812056},{"name":"福利厚生費","value":645877},{"name":"福利厚生費(製)","value":540676},{"name":"賞与(製)","value":198778},{"name":"研修採用費","value":34937}],"other_fixed_breakdown":[{"name":"地代家賃","value":7242035},{"name":"備品・消耗品費","value":5244354},{"name":"リース料","value":3175420},{"name":"保険料","value":2855012},{"name":"支払手数料","value":2735800},{"name":"車両費","value":2622192},{"name":"旅費交通費","value":2436109},{"name":"通信費","value":1956284},{"name":"接待交際費","value":1670663},{"name":"水道光熱費","value":1619617},{"name":"管理諸費","value":1528500},{"name":"減価償却費","value":1010742},{"name":"雑費","value":1003225},{"name":"広告宣伝費","value":368960},{"name":"租税公課","value":131264},{"name":"修繕費","value":75280},{"name":"新聞図書費","value":57155},{"name":"諸会費","value":12364},{"name":"荷造運賃","value":10959}],"profit":23304640,"income_taxes":6961,"net_income":23297679,"depreciation":2021213,"cash_generation":25318892,"operating_income_ref":22821555,"non_operating_net_ref":483085,"ordinary_income_ref":23304640,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":32.7,"profit_margin_pct":14.8,"variable_cost_ratio_pct":40.1}},"commentary":""},"工事部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":121531897,"revenue_breakdown":[{"name":"工事売上高","value":121531897}],"variable_cost":48739907,"variable_breakdown":[{"name":"外注加工費(製)","value":47221851},{"name":"外注費","value":1346761},{"name":"産廃処分費","value":117957},{"name":"商品仕入高","value":44872},{"name":"荷造運賃","value":8465}],"gross_profit":72791990,"fixed_cost":50972674,"personnel_cost":23263575,"other_fixed_cost":27709099,"personnel_breakdown":[{"name":"給料賃金","value":13101099},{"name":"給料賃金(製)","value":3693341},{"name":"法定福利費","value":2060968},{"name":"役員報酬","value":1800000},{"name":"賞与","value":883903},{"name":"法定福利費(製)","value":627239},{"name":"福利厚生費","value":498881},{"name":"福利厚生費(製)","value":417622},{"name":"賞与(製)","value":153538},{"name":"研修採用費","value":26986}],"other_fixed_breakdown":[{"name":"地代家賃","value":4345221},{"name":"備品・消耗品費","value":4050781},{"name":"リース料","value":2452720},{"name":"車両費","value":2025402},{"name":"旅費交通費","value":1881670},{"name":"保険料","value":1713007},{"name":"支払手数料","value":1641480},{"name":"接待交際費","value":1290433},{"name":"通信費","value":1173770},{"name":"水道光熱費","value":971770},{"name":"管理諸費","value":917100},{"name":"雑費","value":774899},{"name":"減価償却費","value":606445},{"name":"広告宣伝費","value":284988},{"name":"租税公課","value":78758},{"name":"修繕費","value":58147},{"name":"新聞図書費","value":34293},{"name":"荷造運賃","value":8465},{"name":"諸会費","value":7418}],"profit":21819316,"income_taxes":5377,"net_income":21813939,"depreciation":1561201,"cash_generation":23375140,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":32.0,"profit_margin_pct":18.0,"variable_cost_ratio_pct":40.1},"operating_income_ref":21819316,"non_operating_net_ref":0,"ordinary_income_ref":21819316,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.7724,"_hq_allocation":{"hq_cost_total":22148773,"hq_ratio":0.6,"hq_cost_allocated":13289264,"dept_own_fixed":37683410,"personnel_hq":1800000,"other_fixed_hq":11489264},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 77.2% / 固定費: 部門固有（全社固定費 - 本社費用 × 77.2%）+ 本社費用配賦（本社推定 22,148,773 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":""},"事業開発部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":35714210,"revenue_breakdown":[{"name":"就労移行支援売上高","value":35714210}],"variable_cost":14323049,"variable_breakdown":[{"name":"外注加工費(製)","value":13876942},{"name":"外注費","value":395769},{"name":"産廃処分費","value":34664},{"name":"商品仕入高","value":13186},{"name":"荷造運賃","value":2488}],"gross_profit":21391161,"fixed_cost":19933419,"personnel_cost":7507436,"other_fixed_cost":12425983,"personnel_breakdown":[{"name":"給料賃金","value":3849980},{"name":"役員報酬","value":1200000},{"name":"給料賃金(製)","value":1085351},{"name":"法定福利費","value":605650},{"name":"賞与","value":259750},{"name":"法定福利費(製)","value":184325},{"name":"福利厚生費","value":146605},{"name":"福利厚生費(製)","value":122725},{"name":"賞与(製)","value":45120},{"name":"研修採用費","value":7930}],"other_fixed_breakdown":[{"name":"地代家賃","value":2896814},{"name":"備品・消耗品費","value":1190391},{"name":"保険料","value":1142005},{"name":"支払手数料","value":1094320},{"name":"通信費","value":782514},{"name":"リース料","value":720773},{"name":"水道光熱費","value":647847},{"name":"管理諸費","value":611400},{"name":"車両費","value":595199},{"name":"旅費交通費","value":552961},{"name":"減価償却費","value":404297},{"name":"接待交際費","value":379216},{"name":"雑費","value":227717},{"name":"広告宣伝費","value":83748},{"name":"租税公課","value":52506},{"name":"新聞図書費","value":22862},{"name":"修繕費","value":17087},{"name":"諸会費","value":4946},{"name":"荷造運賃","value":2488}],"profit":1457742,"income_taxes":1580,"net_income":1456162,"depreciation":458785,"cash_generation":1914947,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":35.1,"profit_margin_pct":4.1,"variable_cost_ratio_pct":40.1},"operating_income_ref":1457742,"non_operating_net_ref":0,"ordinary_income_ref":1457742,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.227,"_hq_allocation":{"hq_cost_total":22148773,"hq_ratio":0.4,"hq_cost_allocated":8859509,"dept_own_fixed":11073910,"personnel_hq":1200000,"other_fixed_hq":7659509},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 22.7% / 固定費: 部門固有（全社固定費 - 本社費用 × 22.7%）+ 本社費用配賦（本社推定 22,148,773 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":""}};
+window.__BUILD_DATE_JST__ = "2026-05-18 13:01 JST";
+window.__EMBEDDED_DATA__ = {"build_timestamp":"2026-05-18T13:01:24.555008+09:00","build_date_jst":"2026-05-18 13:01 JST","全社合計":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":157341582,"revenue_breakdown":[{"name":"工事売上高","value":121531897},{"name":"就労移行支援売上高","value":35714210},{"name":"就労定着支援売上高","value":28880},{"name":"総務売上高","value":51595},{"name":"その他売上高","value":15000}],"variable_cost":63101245,"variable_breakdown":[{"name":"外注加工費(製)","value":61135891},{"name":"外注費","value":1743588},{"name":"産廃処分費","value":152713},{"name":"商品仕入高","value":58094},{"name":"荷造運賃","value":10959}],"gross_profit":94240337,"fixed_cost":70935697,"personnel_cost":30787873,"other_fixed_cost":40147824,"personnel_breakdown":[{"name":"給料賃金","value":16961372},{"name":"給料賃金(製)","value":4781593},{"name":"役員報酬","value":3000000},{"name":"法定福利費","value":2668237},{"name":"賞与","value":1144347},{"name":"法定福利費(製)","value":812056},{"name":"福利厚生費","value":645877},{"name":"福利厚生費(製)","value":540676},{"name":"賞与(製)","value":198778},{"name":"研修採用費","value":34937}],"other_fixed_breakdown":[{"name":"地代家賃","value":7242035},{"name":"備品・消耗品費","value":5244354},{"name":"リース料","value":3175420},{"name":"保険料","value":2855012},{"name":"支払手数料","value":2735800},{"name":"車両費","value":2622192},{"name":"旅費交通費","value":2436109},{"name":"通信費","value":1956284},{"name":"接待交際費","value":1670663},{"name":"水道光熱費","value":1619617},{"name":"管理諸費","value":1528500},{"name":"減価償却費","value":1010742},{"name":"雑費","value":1003225},{"name":"広告宣伝費","value":368960},{"name":"租税公課","value":131264},{"name":"修繕費","value":75280},{"name":"新聞図書費","value":57155},{"name":"諸会費","value":12364},{"name":"荷造運賃","value":10959}],"profit":23304640,"income_taxes":6961,"net_income":23297679,"depreciation":2021213,"cash_generation":25318892,"operating_income_ref":22821555,"non_operating_net_ref":483085,"ordinary_income_ref":23304640,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":32.7,"profit_margin_pct":14.8,"variable_cost_ratio_pct":40.1}},"commentary":""},"工事部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":121531897,"revenue_breakdown":[{"name":"工事売上高","value":121531897}],"variable_cost":48739907,"variable_breakdown":[{"name":"外注加工費(製)","value":47221851},{"name":"外注費","value":1346761},{"name":"産廃処分費","value":117957},{"name":"商品仕入高","value":44872},{"name":"荷造運賃","value":8465}],"gross_profit":72791990,"fixed_cost":50972674,"personnel_cost":23263575,"other_fixed_cost":27709099,"personnel_breakdown":[{"name":"給料賃金","value":13101099},{"name":"給料賃金(製)","value":3693341},{"name":"法定福利費","value":2060968},{"name":"役員報酬","value":1800000},{"name":"賞与","value":883903},{"name":"法定福利費(製)","value":627239},{"name":"福利厚生費","value":498881},{"name":"福利厚生費(製)","value":417622},{"name":"賞与(製)","value":153538},{"name":"研修採用費","value":26986}],"other_fixed_breakdown":[{"name":"地代家賃","value":4345221},{"name":"備品・消耗品費","value":4050781},{"name":"リース料","value":2452720},{"name":"車両費","value":2025402},{"name":"旅費交通費","value":1881670},{"name":"保険料","value":1713007},{"name":"支払手数料","value":1641480},{"name":"接待交際費","value":1290433},{"name":"通信費","value":1173770},{"name":"水道光熱費","value":971770},{"name":"管理諸費","value":917100},{"name":"雑費","value":774899},{"name":"減価償却費","value":606445},{"name":"広告宣伝費","value":284988},{"name":"租税公課","value":78758},{"name":"修繕費","value":58147},{"name":"新聞図書費","value":34293},{"name":"荷造運賃","value":8465},{"name":"諸会費","value":7418}],"profit":21819316,"income_taxes":5377,"net_income":21813939,"depreciation":1561201,"cash_generation":23375140,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":32.0,"profit_margin_pct":18.0,"variable_cost_ratio_pct":40.1},"operating_income_ref":21819316,"non_operating_net_ref":0,"ordinary_income_ref":21819316,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.7724,"_hq_allocation":{"hq_cost_total":22148773,"hq_ratio":0.6,"hq_cost_allocated":13289264,"dept_own_fixed":37683410,"personnel_hq":1800000,"other_fixed_hq":11489264},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 77.2% / 固定費: 部門固有（全社固定費 - 本社費用 × 77.2%）+ 本社費用配賦（本社推定 22,148,773 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":""},"事業開発部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":35714210,"revenue_breakdown":[{"name":"就労移行支援売上高","value":35714210}],"variable_cost":14323049,"variable_breakdown":[{"name":"外注加工費(製)","value":13876942},{"name":"外注費","value":395769},{"name":"産廃処分費","value":34664},{"name":"商品仕入高","value":13186},{"name":"荷造運賃","value":2488}],"gross_profit":21391161,"fixed_cost":19933419,"personnel_cost":7507436,"other_fixed_cost":12425983,"personnel_breakdown":[{"name":"給料賃金","value":3849980},{"name":"役員報酬","value":1200000},{"name":"給料賃金(製)","value":1085351},{"name":"法定福利費","value":605650},{"name":"賞与","value":259750},{"name":"法定福利費(製)","value":184325},{"name":"福利厚生費","value":146605},{"name":"福利厚生費(製)","value":122725},{"name":"賞与(製)","value":45120},{"name":"研修採用費","value":7930}],"other_fixed_breakdown":[{"name":"地代家賃","value":2896814},{"name":"備品・消耗品費","value":1190391},{"name":"保険料","value":1142005},{"name":"支払手数料","value":1094320},{"name":"通信費","value":782514},{"name":"リース料","value":720773},{"name":"水道光熱費","value":647847},{"name":"管理諸費","value":611400},{"name":"車両費","value":595199},{"name":"旅費交通費","value":552961},{"name":"減価償却費","value":404297},{"name":"接待交際費","value":379216},{"name":"雑費","value":227717},{"name":"広告宣伝費","value":83748},{"name":"租税公課","value":52506},{"name":"新聞図書費","value":22862},{"name":"修繕費","value":17087},{"name":"諸会費","value":4946},{"name":"荷造運賃","value":2488}],"profit":1457742,"income_taxes":1580,"net_income":1456162,"depreciation":458785,"cash_generation":1914947,"metrics":{"gross_margin_pct":59.9,"labor_share_pct":35.1,"profit_margin_pct":4.1,"variable_cost_ratio_pct":40.1},"operating_income_ref":1457742,"non_operating_net_ref":0,"ordinary_income_ref":1457742,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.227,"_hq_allocation":{"hq_cost_total":22148773,"hq_ratio":0.4,"hq_cost_allocated":8859509,"dept_own_fixed":11073910,"personnel_hq":1200000,"other_fixed_hq":7659509},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 22.7% / 固定費: 部門固有（全社固定費 - 本社費用 × 22.7%）+ 本社費用配賦（本社推定 22,148,773 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":""}};
 </script>
 </head>
 <body>
 
-<header>
-  <div>
-    <h1>桜千株式会社 — お金のブロックパズル</h1>
-    <div class="subtitle">マネーフォワード クラウド会計 | 和仁達也方式</div>
-  </div>
-  <div class="header-right">
-    <div id="dept-selector-wrap">
-      <label for="dept-select">部門:</label>
+<header class="app-header">
+  <div class="header-inner">
+    <div class="brand-block">
+      <div class="brand-mark">桜</div>
+      <div class="brand-text">
+        <h1>桜千株式会社 — お金のブロックパズル</h1>
+        <div class="subtitle">マネーフォワード クラウド会計 ・ 和仁達也方式</div>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="dept-pills" id="dept-pills">
+        <button data-val="" class="active">全社合計</button>
+        <button data-val="cluster:工事部">工事部</button>
+        <button data-val="cluster:事業開発部">事業開発部</button>
+      </div>
       <select id="dept-select">
         <option value="">全社合計</option>
         <option value="cluster:工事部">工事部</option>
         <option value="cluster:事業開発部">事業開発部</option>
       </select>
+      <span id="period-label">読み込み中...</span>
+      <button id="refresh-btn">更新</button>
     </div>
-    <span id="period-label">読み込み中...</span>
-    <button id="refresh-btn">最新データに更新</button>
   </div>
 </header>
 
@@ -558,10 +768,7 @@ const fmt = (v) => {
   if (abs >= 10_000)      return sign + Math.round(abs / 10_000).toLocaleString() + '万円';
   return sign + abs.toLocaleString() + '円';
 };
-// 万円単位の整数値を返す（四捨五入）
 const toMan = (v) => Math.round((v || 0) / 10_000);
-// 万円単位の整数値を fmt 形式に戻す（逆算値を表示する用）
-// ※ 1億円以上でも常に万円表示（他のマスと単位統一）
 const fmtMan = (man) => {
   if (man == null || isNaN(man)) return '—';
   const abs  = Math.abs(man);
@@ -577,16 +784,10 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 /* ═══════════════════════════════════════════════════════
  * 状態
  * ═══════════════════════════════════════════════════════ */
-let _currentSelectVal = '';   // '' = 全社合計, 'cluster:工事部', 'cluster:事業開発部'
+let _currentSelectVal = '';
 
 /* ═══════════════════════════════════════════════════════
- * データ取得
- *
- * selectVal の解釈:
- *   '' (空文字)         → 全社合計 /api/blockpuzzle
- *   'cluster:工事部'    → /api/blockpuzzle?cluster=工事部
- *   'cluster:事業開発部'→ /api/blockpuzzle?cluster=事業開発部
- *   その他              → /api/blockpuzzle?department_id=X（後方互換）
+ * データ取得（server.py 連携時）
  * ═══════════════════════════════════════════════════════ */
 async function loadData(selectVal) {
   // standalone mode: embedded data から読み出し（API call なし）
@@ -611,18 +812,21 @@ async function loadData(selectVal) {
 }
 
 /* ═══════════════════════════════════════════════════════
- * 部門セレクター初期化
- *
- * クラスタ選択肢は HTML に静的記述済み（全社合計 / 工事部 / 事業開発部）。
- * change イベントのみ登録する。
+ * 部門ピル初期化
  * ═══════════════════════════════════════════════════════ */
 async function initDeptSelector() {
+  const pills = document.getElementById('dept-pills');
   const sel = document.getElementById('dept-select');
-  if (!sel) return;
+  if (!pills) return;
 
-  sel.addEventListener('change', async () => {
-    _currentSelectVal = sel.value;
-    const label = sel.options[sel.selectedIndex].textContent;
+  pills.addEventListener('click', async (e) => {
+    const btn = e.target.closest('button[data-val]');
+    if (!btn) return;
+    pills.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+    const val = btn.dataset.val;
+    if (sel) sel.value = val;
+    _currentSelectVal = val;
+    const label = btn.textContent;
     document.getElementById('main-content').innerHTML =
       `<div class="loading">${label} のデータを読み込んでいます...</div>`;
     try {
@@ -638,17 +842,11 @@ async function initDeptSelector() {
 }
 
 /* ═══════════════════════════════════════════════════════
- * CF 拡張ブロック描画（本家準拠 3 列）
- *
- * 本家 CF 拡張（money-block-puzzle-cf.png）:
- *   利益（= 経常利益）
- *     → Col1: 法人税等（上）/ 税引後利益（下）
- *     → Col2: 減価償却費（上）/ 税引後利益（下）
- *     → Col3: CF 生成額
- *
- * 高さ連動:
- *   Col1: cfH（利益ブロックと同じ高さ）→ 法人税 + 税引後利益
- *   Col2〜Col3: cfH + depr 分で上方拡張
+ * CF 拡張描画 — シンプル化版
+ *   - ①②③ バッジ撤廃
+ *   - ＋ ＝ 演算子撤廃（タイトルで補足）
+ *   - 太い SVG 矢印 + "減価償却費の繰戻" テキスト撤廃
+ *   - CF パネルのフローティングヘッダー撤廃 → カード上に控えめなラベル
  * ═══════════════════════════════════════════════════════ */
 function renderCFExtension(bp, layout) {
   const canvas    = document.getElementById('puzzle-canvas');
@@ -656,28 +854,27 @@ function renderCFExtension(bp, layout) {
   const puzzleRow = canvas ? canvas.parentElement : null;
   if (!canvas || !cfRow || !puzzleRow) return;
 
-  const profitVal   = bp.profit         || 0;  // 利益 = 経常利益
+  const profitVal   = bp.profit         || 0;
   const taxAmt      = bp.income_taxes   || 0;
   const netInc      = bp.net_income     || (profitVal - taxAmt);
   const depr        = bp.depreciation   || 0;
   const cashGen     = bp.cash_generation || (netInc + depr);
 
-  const { vcH, opH, subH, otherH, PUZZLE_H, personnelH } = layout;
+  const { vcH, opH, subH, PUZZLE_H } = layout;
 
-  const profitTop  = vcH + subH;   // 利益ブロックの top px
-  const cfH        = opH;          // 利益ブロックと同じ高さ
-  const CF_COL_W   = 140;
+  const profitTop = vcH + subH;
+  const cfH       = opH;
+  const CF_COL_W  = 130;
   const MIN_CELL_H = 32;
 
-  // ── 万円整合性逆算（CF 拡張用）──────────────────────────────
-  // layout.op_man_adj = 粗利 - 固定費（= 利益の逆算万円値）
-  const profit_man_adj = layout.op_man_adj;             // 利益（逆算）= 粗利 - 固定費
-  const taxAmt_man     = toMan(taxAmt);                 // 法人税: 四捨五入基準（小額は円表示）
-  const netInc_man     = profit_man_adj - taxAmt_man;   // 税引後利益 = 利益 - 法人税
-  const depr_man       = toMan(depr);                   // 減価償却費
-  const cashGen_man    = netInc_man + depr_man;         // CF生成額 = 税引後利益 + 減価償却費
+  // ── 万円整合性 ──
+  const profit_man_adj = layout.op_man_adj;
+  const taxAmt_man     = toMan(taxAmt);
+  const netInc_man     = profit_man_adj - taxAmt_man;
+  const depr_man       = toMan(depr);
+  const cashGen_man    = netInc_man + depr_man;
 
-  // ── Col1: 法人税等（上）/ 税引後利益（下）（cfH を分割） ─────
+  // ── Col1 (法人税 / 税引後利益) ──
   let taxH;
   if (profitVal > 0 && taxAmt > 0) {
     taxH = Math.round(cfH * taxAmt / profitVal);
@@ -687,7 +884,7 @@ function renderCFExtension(bp, layout) {
   }
   const netH = Math.max(MIN_CELL_H, cfH - taxH);
 
-  // ── Col2〜Col3: CF 生成額（net_income + depr 分上方拡張） ─────
+  // ── Col2/Col3 ──
   let cfCol2H;
   if (netInc > 0 && cashGen > 0) {
     cfCol2H = Math.round(cfH * cashGen / netInc);
@@ -695,8 +892,7 @@ function renderCFExtension(bp, layout) {
     cfCol2H = cfH + Math.round(cfH * 0.25);
   }
   if (cfCol2H < MIN_CELL_H * 2) cfCol2H = MIN_CELL_H * 2;
-
-  const cfCol2TopOffset = cfCol2H - cfH;  // 利益 top より上にずらす分
+  const cfCol2TopOffset = cfCol2H - cfH;
   const col2Top = profitTop - cfCol2TopOffset;
 
   let deprH;
@@ -708,216 +904,119 @@ function renderCFExtension(bp, layout) {
   }
   const netH2 = Math.max(MIN_CELL_H, cfCol2H - deprH);
 
-  // cf-extension-row の幅: Col1〜Col3 = 3 列
-  const totalCFW = CF_COL_W * 3;
+  // cf-extension-row サイズ
+  const COL_GAP = 6;
+  const totalCFW = CF_COL_W * 3 + COL_GAP * 2;
   cfRow.style.width  = totalCFW + 'px';
   cfRow.style.height = PUZZLE_H + 'px';
 
-  // 矢印: その他固定費右端 → Col2（減価償却費）左端
-  const canvasW    = canvas.offsetWidth;
-  const otherTop   = vcH + personnelH;
-  const arrowFromX = canvasW - 4;
-  const arrowFromY = otherTop + otherH / 2;
-  // puzzle-row 相対: canvasW + border(2px) + CF_COL_W * 1 (Col1) + 12
-  const arrowToX   = canvasW + 2 + CF_COL_W * 1 + 12;
-  const arrowToY   = col2Top + deprH / 2;
-
-  puzzleRow.style.position = 'relative';
-  const svgW = canvasW + totalCFW + 40;
-  const svgH = PUZZLE_H;
-
-  // ── 演算子（+ / =）の配置座標 ───────────────────────────────
-  // Col1 と Col2 の境目、Col2 内の減価償却費と税引後利益の間に「+」
-  // Col2 と Col3 の境目に「=」
-  // 22px 直径 → -11px で中央寄せ
-  const opSize = 22;
-  // 「+」: Col2 内、減価償却費 と 税引後利益 の境界（col2Top + deprH の Y 位置）の真ん中、横は Col1-Col2 境界
-  // ただし「税引後利益 ＋ 減価償却費 ＝ CF生成額」の式は本家通り「Col2-net + depr = Col3」の意味なので、
-  // 「+」は Col2 内の deprH と netH2 の境界に置く（Col2 内の縦位置）
-  const plusX = CF_COL_W - opSize / 2;                    // Col1/Col2 境界の上、中央
-  const plusY = col2Top + deprH - opSize / 2;             // 減価償却費 と 税引後利益(Col2) の境界 Y
-  const equalsX = CF_COL_W * 2 - opSize / 2;              // Col2/Col3 境界
-  const equalsY = col2Top + cfCol2H / 2 - opSize / 2;     // Col3 中央
-
+  // 各セルは canvas 相対座標（top:profitTop など）でそのまま配置
+  // ※ ヘッダーラベルは canvas 上端に重ねず変動費セルの上に配置（5px のみオフセット）
   const cfHtml = `
-    <!-- CF パネル ヘッダー（修正 Issue 3: 本体と同じ縦長セクションに見せる） -->
-    <div class="cf-section-header">
-      <div class="cf-section-title">キャッシュフロー生成</div>
-      <div class="cf-section-sub">利益 → 税引後利益 ＋ 減価償却費 ＝ CF</div>
-    </div>
+    <!-- 控えめなヘッダー（変動費セルの右側、上端） -->
+    <div class="cf-section-mini" style="
+      position:absolute; top:6px; left:2px; margin:0; z-index:5;
+    ">キャッシュフロー生成</div>
 
-    <!-- CF Col1上: 法人税等 -->
+    <!-- Col1: 法人税等 -->
     <div class="cf-cell cell-tax" style="
       left:0; top:${profitTop}px;
       width:${CF_COL_W}px; height:${taxH}px;
-      border:1px solid rgba(0,0,0,0.09);
-      border-left: none;
     ">
       <div class="cf-label">法人税等</div>
       <div class="cf-amount">${fmt(taxAmt)}</div>
     </div>
-    <!-- CF Col1下: 税引後利益（修正 Issue 1/4: 利益と直結する起点 = ステップ ①） -->
+    <!-- Col1: 税引後利益 -->
     <div class="cf-cell cell-net-income" style="
       left:0; top:${profitTop + taxH}px;
       width:${CF_COL_W}px; height:${netH}px;
-      border:1px solid rgba(0,0,0,0.09);
-      border-top:none;
-      border-left: none;
     ">
-      <div class="cf-step-badge">1</div>
       <div class="cf-label">税引後利益</div>
       <div class="cf-amount">${fmtMan(netInc_man)}</div>
     </div>
 
-    <!-- CF Col2上: 減価償却費（col2Top から deprH） = ステップ ② -->
+    <!-- Col2: 減価償却費 -->
     <div class="cf-cell cell-depreciation" style="
-      left:${CF_COL_W}px; top:${col2Top}px;
+      left:${CF_COL_W + COL_GAP}px; top:${col2Top}px;
       width:${CF_COL_W}px; height:${deprH}px;
-      border:1px solid rgba(0,0,0,0.09);
     ">
-      <div class="cf-step-badge">2</div>
       <div class="cf-label">減価償却費</div>
       <div class="cf-amount">${fmtMan(depr_man)}</div>
     </div>
-    <!-- CF Col2下: 税引後利益（再掲） -->
+    <!-- Col2: 税引後利益(再掲) -->
     <div class="cf-cell cell-net-income" style="
-      left:${CF_COL_W}px; top:${col2Top + deprH}px;
+      left:${CF_COL_W + COL_GAP}px; top:${col2Top + deprH}px;
       width:${CF_COL_W}px; height:${netH2}px;
-      border:1px solid rgba(0,0,0,0.09);
-      border-top:none;
     ">
       <div class="cf-label">税引後利益</div>
       <div class="cf-amount">${fmtMan(netInc_man)}</div>
     </div>
 
-    <!-- CF Col3: CF 生成額（Col2 と同じ高さ・top） = ステップ ③ -->
+    <!-- Col3: CF 生成額 -->
     <div class="cf-cell cell-cash-gen" style="
-      left:${CF_COL_W * 2}px; top:${col2Top}px;
+      left:${CF_COL_W * 2 + COL_GAP * 2}px; top:${col2Top}px;
       width:${CF_COL_W}px; height:${cfCol2H}px;
-      border:1.5px solid #f5c576;
     ">
-      <div class="cf-step-badge">3</div>
-      <div class="cf-label" style="color:#6b5d3a;">CF 生成額</div>
-      <div class="cf-amount" style="color:#6b5d3a; font-size:0.95rem; font-weight:700;">${fmtMan(cashGen_man)}</div>
-      <div style="font-size:0.60rem; color:#6b5d3a; margin-top:6px; text-align:center; line-height:1.5; padding:0 6px; font-weight:400; opacity:0.75;">※返済・設備投資等<br>BS/CF 計算書から</div>
+      <div class="cf-label">CF 生成額</div>
+      <div class="cf-amount">${fmtMan(cashGen_man)}</div>
+      <div class="cf-foot">※返済・設備投資等<br>BS/CF 計算書から</div>
     </div>
-
-    <!-- 演算子 「+」: 税引後利益(Col2) と 減価償却費 の境界に重ねる -->
-    <div class="cf-operator" style="left:${plusX}px; top:${plusY}px;">＋</div>
-    <!-- 演算子 「=」: Col2 と Col3 の境界に重ねる -->
-    <div class="cf-operator" style="left:${equalsX}px; top:${equalsY}px;">＝</div>
   `;
 
-  // ── 矢印 SVG（修正 Issue 2/4）─────────────────────────────
-  // (a) 利益 → 税引後利益(Col1) を直結する太いブリッジ矢印
-  //     利益セル右端の中央から、Col1 内の税引後利益セル左端の中央へ
-  // (b) その他固定費 → 減価償却費（旧「減価償却費の繰戻」）— 太く目立つ色に
-  // (c) Col1 税引後利益 → Col2 税引後利益(再掲) — 同額のキャリーオーバーを示す細い破線
-  const profitRightX = canvasW - 2;
-  const profitMidY   = profitTop + cfH / 2;
-  const col1NetMidY  = profitTop + taxH + netH / 2;       // Col1 税引後利益の中央
-  // Col1 右端 → Col2 税引後利益(再掲) 左端（同額キャリーオーバー）
-  const col1NetRightX = canvasW + 2 + CF_COL_W;
-  const col1NetRightY = col1NetMidY;
-  const col2NetLeftX  = canvasW + 2 + CF_COL_W;
-  const col2NetLeftY  = col2Top + deprH + netH2 / 2;
-
-  const arrowSvgHtml = `
-    <svg class="cf-arrow-svg" style="
-      position:absolute; left:0; top:0;
-      width:${svgW}px; height:${svgH}px;
-      overflow:visible; pointer-events:none; z-index:15;
-    " viewBox="0 0 ${svgW} ${svgH}">
-      <defs>
-        <!-- 既存：その他固定費→減価償却費 用の太い矢印（色濃く） -->
-        <marker id="arrowhead-bold" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
-          <polygon points="0 0, 12 5, 0 10" fill="#9a3412"/>
-        </marker>
-        <!-- 利益→税引後利益 ブリッジ用矢印 -->
-        <marker id="arrowhead-flow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
-          <polygon points="0 0, 10 4, 0 8" fill="#92400e"/>
-        </marker>
-      </defs>
-
-      <!-- (a) 利益 → 税引後利益 のブリッジ矢印（Issue 1: 連続性） -->
-      <path
-        d="M ${profitRightX.toFixed(1)} ${profitMidY.toFixed(1)}
-           L ${(canvasW + 2).toFixed(1)} ${col1NetMidY.toFixed(1)}"
-        fill="none" stroke="#92400e" stroke-width="2.2"
-        marker-end="url(#arrowhead-flow)"
-        opacity="0.85"
-      />
-
-      <!-- (b) その他固定費 → 減価償却費（Issue 2: 太く目立つ色） -->
-      <path
-        d="M ${arrowFromX.toFixed(1)} ${arrowFromY.toFixed(1)}
-           C ${(arrowFromX + 60).toFixed(1)} ${arrowFromY.toFixed(1)},
-             ${(arrowToX - 40).toFixed(1)} ${(arrowToY + 20).toFixed(1)},
-             ${arrowToX.toFixed(1)} ${arrowToY.toFixed(1)}"
-        fill="none" stroke="#9a3412" stroke-width="3"
-        marker-end="url(#arrowhead-bold)"
-        opacity="0.9"
-      />
-      <text
-        x="${((arrowFromX + arrowToX) / 2).toFixed(1)}"
-        y="${(Math.min(arrowFromY, arrowToY) - 8).toFixed(1)}"
-        font-size="12" fill="#9a3412" text-anchor="middle"
-        font-weight="700"
-        font-family="Noto Sans JP, Hiragino Kaku Gothic ProN, Meiryo, Yu Gothic, sans-serif"
-      >減価償却費の繰戻</text>
-    </svg>
-  `;
-
-  // 既存の CF 要素を削除（再描画対応）
   cfRow.innerHTML = '';
-  puzzleRow.querySelectorAll('.cf-arrow-svg').forEach(el => el.remove());
-
-  // CF セルを cfRow に挿入
   cfRow.innerHTML = cfHtml;
+  // 旧 SVG 矢印は出力しない（撤廃）
+  puzzleRow.querySelectorAll('.cf-arrow-svg').forEach(el => el.remove());
+}
 
-  // 矢印 SVG を puzzle-row に挿入
-  const tmp = document.createElement('div');
-  tmp.innerHTML = arrowSvgHtml;
-  while (tmp.firstChild) puzzleRow.appendChild(tmp.firstChild);
+/* ═══════════════════════════════════════════════════════
+ * KPI ストリップ HTML 生成
+ * ═══════════════════════════════════════════════════════ */
+function buildKpiStrip(bp, op_man_adj) {
+  const rev  = bp.revenue || 0;
+  const gp   = bp.gross_profit || 0;
+  const fc   = (bp.personnel_cost || 0) + (bp.other_fixed_cost || 0);
+  const op   = bp.profit || 0;
+  const netInc  = bp.net_income || 0;
+  const depr    = bp.depreciation || 0;
+  const cashGen = bp.cash_generation || (netInc + depr);
+  const m = bp.metrics || {};
+
+  const gmPct = m.gross_margin_pct != null
+    ? m.gross_margin_pct.toFixed(1) + '%'
+    : pctStr(gp, rev);
+  const opPctOfRev = rev > 0 ? (op / rev * 100).toFixed(1) + '%' : '—';
+  const fcRatio = gp > 0 ? (fc / gp * 100).toFixed(1) + '%' : '—';
+  const cfPctOfRev = rev > 0 ? (cashGen / rev * 100).toFixed(1) + '%' : '—';
+
+  return `
+    <div class="kpi-strip">
+      <div class="kpi-card kpi-revenue">
+        <div class="kpi-label">売上高</div>
+        <div class="kpi-value">${fmt(rev)}</div>
+        <div class="kpi-sub">月平均 約 <strong>${fmt(rev / 12)}</strong></div>
+      </div>
+      <div class="kpi-card kpi-gross">
+        <div class="kpi-label">粗利</div>
+        <div class="kpi-value">${fmt(gp)}</div>
+        <div class="kpi-sub">粗利率 <strong>${gmPct}</strong></div>
+      </div>
+      <div class="kpi-card kpi-profit">
+        <div class="kpi-label">経常利益</div>
+        <div class="kpi-value">${fmt(op)}</div>
+        <div class="kpi-sub">売上比 <strong>${opPctOfRev}</strong> ・ 固定費比 <strong>${fcRatio}</strong></div>
+      </div>
+      <div class="kpi-card kpi-cash">
+        <div class="kpi-label">CF 生成額</div>
+        <div class="kpi-value">${fmt(cashGen)}</div>
+        <div class="kpi-sub">売上比 <strong>${cfPctOfRev}</strong></div>
+      </div>
+    </div>
+  `;
 }
 
 /* ═══════════════════════════════════════════════════════
  * ブロックパズル描画
- *
- * 本家レイアウト（money-block-puzzle-7block.png）に 1:1 準拠:
- *
- *  ┌──────────┬───────────────────────────────────────┐
- *  │          │            変動費                      │  ← row0: vcH
- *  │  売上高  ├──────────┬───────────┬───────────────┤
- *  │          │          │           │  人件費         │
- *  │          │  粗利    │  固定費   │                 │
- *  │          │          │  (ラベル) │─────────────────│
- *  │          │          │           │  その他固定費   │
- *  │          │          │           │                 │
- *  │          │          │           ├───────────────  │
- *  │          │          │           │  利益           │
- *  └──────────┴──────────┴───────────┴────────────────┘
- *   col0:      col1:      col2:       col3:
- *   salesW     grossW     fixedLabelW fixedSubW
- *
- * 寸法計算:
- *   全高 H = 560px (固定)
- *   vcH  = clamp( vc / rev * H, MIN, H-2*MIN )
- *   gpH  = H - vcH  (粗利エリア高さ = 固定費ラベル・人件費・その他固定費の高さ)
- *   opH  = clamp( op / rev * gpH, MIN, gpH-2*MIN )  ← gpH の中の下端
- *   personnelH = (gpH - opH) * pc / fc
- *   otherH     = gpH - opH - personnelH
- *
- *   salesW = 28% of W (固定)
- *   rightW = W - salesW
- *   grossW = rightW * gp / (gp + fc) ← 横幅は粗利:固定費比
- *   fixedW = rightW - grossW
- *   fixedLabelW = fixedW * 0.40  (固定費ラベル列 40%)
- *   fixedSubW   = fixedW * 0.60  (人件費/その他/利益列 60%)
- *
- *   楕円バッジ位置 (canvas 絶対座標):
- *     粗利率バッジ   → 粗利セルの下部中央
- *     労働分配率バッジ → 粗利/固定費の境界、row1 の上部
  * ═══════════════════════════════════════════════════════ */
 function buildPuzzle(bp) {
   const rev  = bp.revenue          || 0;
@@ -926,90 +1025,63 @@ function buildPuzzle(bp) {
   const fc   = (bp.personnel_cost || 0) + (bp.other_fixed_cost || 0);
   const pc   = bp.personnel_cost   || 0;
   const ofc  = bp.other_fixed_cost || 0;
-  const op   = bp.profit           || 0;  // 利益 = 経常利益（設計C-A）
+  const op   = bp.profit           || 0;
   const m    = bp.metrics          || {};
 
-  // ── 本社経費配賦情報（クラスタ表示時のみ存在） ──────────
   const hqAlloc       = bp._hq_allocation || null;
   const isCluster     = !!hqAlloc;
   const hqFixed       = hqAlloc ? (hqAlloc.hq_cost_allocated || 0) : 0;
   const hqPersonnel   = hqAlloc ? (hqAlloc.personnel_hq      || 0) : 0;
   const hqOtherFixed  = hqAlloc ? (hqAlloc.other_fixed_hq    || 0) : 0;
-  // fc_man, pc_man, ofc_man は後で定義するので、hq値を万円で先算しておく
   const hqFixed_man      = Math.round(hqFixed      / 10_000);
   const hqPersonnel_man  = Math.round(hqPersonnel  / 10_000);
   const hqOtherFixed_man = Math.round(hqOtherFixed / 10_000);
-  // CF 拡張データ
-  const taxAmt  = bp.income_taxes   || 0;
-  const netInc  = bp.net_income     || 0;
-  const depr    = bp.depreciation   || 0;
-  const cashGen = bp.cash_generation || (netInc + depr);
 
-  /* ── キャンバスサイズ ─────────────────────────── */
-  const PUZZLE_H = 560;
+  /* ── キャンバスサイズ ── */
+  const PUZZLE_H = 540;
   const MIN_ROW  = 48;
 
-  /* ── 縦分割 ──────────────────────────────────── */
-  // 本家: 変動費が上、粗利エリアが下
-  // 利益は粗利エリア（右サブカラム）の最下端に収まる
+  /* ── 縦分割 ── */
   const vcH_raw = rev > 0 ? vc / rev * PUZZLE_H : PUZZLE_H / 3;
   const vcH  = clamp(Math.round(vcH_raw), MIN_ROW, PUZZLE_H - 2 * MIN_ROW);
-  const gpH  = PUZZLE_H - vcH;  // 粗利エリア全体高さ（利益含む）
+  const gpH  = PUZZLE_H - vcH;
 
-  // 利益高さは粗利エリア内で計算（最小高さ 50px を確保してレイアウト崩れ防止）
-  const MIN_PROFIT = 50;
+  const MIN_PROFIT = 56;
   const opH_raw = rev > 0 ? op / rev * PUZZLE_H : gpH / 6;
   const opH  = clamp(Math.round(opH_raw), MIN_PROFIT, gpH - 2 * MIN_ROW);
 
-  // 固定費サブカラム内の人件費・その他固定費（利益の上に積む）
-  const subH = gpH - opH;  // 人件費+その他固定費の合計高さ
+  const subH = gpH - opH;
   const personnelH = fc > 0
     ? clamp(Math.round(subH * pc / fc), 24, subH - 24)
     : Math.round(subH / 2);
   const otherH = subH - personnelH;
 
-  /* ── 横分割 (% で JS から style に書き込む) ──── */
-  const SALES_PCT = 28;      // 売上高列は固定 28%
+  /* ── 横分割 ── */
+  const SALES_PCT = 28;
   const rightPct  = 100 - SALES_PCT;
 
-  // 粗利 : 固定費 = gp : fc (両方 0 のときは 50:50)
   const totalRight = gp + fc;
   const grossPct   = totalRight > 0 ? (gp / totalRight * rightPct) : rightPct * 0.5;
   const fixedPct   = rightPct - grossPct;
 
-  // 固定費列内: 左40%=固定費ラベル、右60%=人件費/その他/利益サブカラム
   const FIXED_LABEL_RATIO = 0.40;
   const fixedLabelPct = fixedPct * FIXED_LABEL_RATIO;
   const fixedSubPct   = fixedPct * (1 - FIXED_LABEL_RATIO);
 
-  /* ── 各ブロックの絶対位置 (px または %) ─────── */
-  // col0 = 売上高: left=0, w=SALES_PCT%
-  // col1 = 粗利: left=SALES_PCT%, w=grossPct%, top=vcH, h=gpH
-  // col2 = 固定費ラベル: left=SALES_PCT%+grossPct%, w=fixedLabelPct%, top=vcH, h=gpH
-  // col3 = 固定費サブ（人件費/その他/利益）: left=SALES_PCT%+grossPct%+fixedLabelPct%, w=fixedSubPct%
-  //   top=vcH, h=personnelH → 人件費
-  //   top=vcH+personnelH, h=otherH → その他固定費
-  //   top=vcH+subH, h=opH → 利益
+  const grossLeft     = SALES_PCT;
+  const fixedLabelLeft = SALES_PCT + grossPct;
+  const fixedSubLeft  = SALES_PCT + grossPct + fixedLabelPct;
 
-  const salesLeft     = 0;
-  const grossLeft     = SALES_PCT;                          // %
-  const fixedLabelLeft = SALES_PCT + grossPct;             // %
-  const fixedSubLeft  = SALES_PCT + grossPct + fixedLabelPct; // %
-
-  /* ── 万円表示の整合性確保（方針 B: 逆算）──────── */
-  // 基準値: 四捨五入で確定
+  /* ── 万円表示の整合性 ── */
   const rev_man  = toMan(rev);
   const gp_man   = toMan(gp);
   const fc_man   = toMan(fc);
   const pc_man   = toMan(pc);
-  const op_man   = toMan(op);
-  // 従属値: 基準値から逆算
-  const vc_man   = rev_man - gp_man;              // 変動費 = 売上 - 粗利
-  const ofc_man  = fc_man - pc_man;               // その他固定費 = 固定費 - 人件費
-  // 利益は「粗利 - 固定費」で逆算し整合を確保
-  const op_man_adj = gp_man - fc_man;             // 利益(整合版) = 粗利 - 固定費
+  const vc_man   = rev_man - gp_man;
+  const ofc_man  = fc_man - pc_man;
+  const op_man_adj = gp_man - fc_man;
 
-  /* ── メトリクス文字列 ──────────────────────── */
+  /* ── メトリクス ── */
   const grossMarginStr = m.gross_margin_pct != null
     ? m.gross_margin_pct.toFixed(1) + '%'
     : pctStr(gp, rev);
@@ -1017,202 +1089,148 @@ function buildPuzzle(bp) {
     ? m.labor_share_pct.toFixed(1) + '%'
     : pctStr(pc, gp);
 
-  /* ── HTML 生成 ──────────────────────────────── */
-  // ブロック間の罫線は各セルの border で管理
-  // 外枠は #puzzle-canvas の border (2px solid #888) で担当
-  // 内部の分割線は 1.5px solid #888
-
-  const INNER_BORDER = '1px solid rgba(0,0,0,0.09)';
+  const INNER_BORDER = '1px solid rgba(15, 23, 42, 0.06)';
 
   const html = `
-  <div class="puzzle-wrapper">
-    <div class="puzzle-title">お金のブロックパズル（和仁達也方式）</div>
-    <div style="
-      display:flex; gap:18px; flex-wrap:wrap; align-items:center;
-      margin-bottom:6px; padding:8px 12px;
-      background:#f9fafb; border-radius:6px;
-      border:1px solid #e5e7eb;
-    ">
-      <span style="font-size:0.72rem; color:#6b7280; font-weight:600; letter-spacing:0.05em; white-space:nowrap;">構造式</span>
-      <span style="font-size:0.72rem; color:#374151; white-space:nowrap;">売上 ＝ 変動費 ＋ <span style="color:#065f46; font-weight:600;">粗利</span></span>
-      <span style="font-size:0.72rem; color:#6b7280;">｜</span>
-      <span style="font-size:0.72rem; color:#374151; white-space:nowrap;"><span style="color:#065f46; font-weight:600;">粗利</span> ＝ <span style="color:#9a3412; font-weight:600;">固定費</span> ＋ <span style="color:#92400e; font-weight:600;">利益</span></span>
-      <span style="font-size:0.72rem; color:#6b7280;">｜</span>
-      <span style="font-size:0.72rem; color:#374151; white-space:nowrap;"><span style="color:#9a3412; font-weight:600;">固定費</span> ＝ 人件費 ＋ その他固定費</span>
-      <span style="font-size:0.72rem; color:#6b7280;">｜</span>
-      <span style="font-size:0.72rem; color:#374151; white-space:nowrap;"><span style="color:#92400e; font-weight:600;">利益</span> − 法人税 ＝ 税引後利益</span>
-      <span style="font-size:0.72rem; color:#6b7280;">｜</span>
-      <span style="font-size:0.72rem; color:#374151; white-space:nowrap;">税引後利益 ＋ 減価償却費 ＝ CF生成額</span>
-    </div>
-    <div style="font-size:0.67rem; color:#9ca3af; margin-bottom:4px; padding:0 12px; font-weight:400; letter-spacing:0.01em;">
-      ※「利益」は経常利益、「固定費」は販管費から営業外損益を吸収した実質固定費。和仁達也方式準拠
-    </div>
-    <div id="cluster-allocation-note" style="display:none; font-size:0.67rem; color:#6b7280; margin-bottom:14px; padding:4px 12px; font-weight:500; letter-spacing:0.01em; background:#fefce8; border-left:3px solid #f59e0b; border-radius:0 4px 4px 0; margin-left:12px; margin-right:12px;">
-      ※ クラスタ表示時: 本社経費（本部 + その他「総務部」推定）を 工事部 60% / 事業開発部 40% で配賦
-    </div>
-
+    <div class="puzzle-row-wrap">
     <div class="puzzle-row">
-    <div id="puzzle-canvas" style="height:${PUZZLE_H}px; position:relative; overflow:hidden;">
+      <div id="puzzle-canvas" style="height:${PUZZLE_H}px; position:relative; overflow:hidden;">
 
-      <!-- ① 売上高: col0, 全高 -->
-      <div class="bp-cell cell-revenue" style="
-        left:0; top:0;
-        width:${SALES_PCT}%; height:100%;
-        border-right:${INNER_BORDER};
-        border-radius: 3px 0 0 3px;
-        box-shadow: inset -1px 0 0 rgba(255,255,255,0.6);
-      ">
-        <div class="cell-label">売上高</div>
-        <div class="cell-amount">${fmtMan(rev_man)}</div>
-      </div>
+        <!-- ① 売上高 -->
+        <div class="bp-cell cell-revenue" style="
+          left:0; top:0;
+          width:${SALES_PCT}%; height:100%;
+          border-right:${INNER_BORDER};
+        ">
+          <div class="cell-label">売上高</div>
+          <div class="cell-amount">${fmtMan(rev_man)}</div>
+        </div>
 
-      <!-- ② 変動費: col1〜3（右カラム全幅）, 上端 -->
-      <div class="bp-cell cell-variable" style="
-        left:${SALES_PCT}%; top:0;
-        width:${rightPct.toFixed(3)}%; height:${vcH}px;
-        border-bottom:${INNER_BORDER};
-        border-radius: 0 3px 0 0;
-        box-shadow: inset 0 -1px 0 rgba(255,255,255,0.6);
-      ">
-        <div class="cell-label">変動費</div>
-        <div class="cell-amount">${fmtMan(vc_man)}</div>
-      </div>
+        <!-- ② 変動費 -->
+        <div class="bp-cell cell-variable" style="
+          left:${SALES_PCT}%; top:0;
+          width:${rightPct.toFixed(3)}%; height:${vcH}px;
+          border-bottom:${INNER_BORDER};
+        ">
+          <div class="cell-label">変動費</div>
+          <div class="cell-amount">${fmtMan(vc_man)}</div>
+        </div>
 
-      <!-- ③ 粗利: col1, 変動費の下・全高 (gpH) -->
-      <div class="bp-cell cell-gross" style="
-        left:${grossLeft.toFixed(3)}%; top:${vcH}px;
-        width:${grossPct.toFixed(3)}%; height:${gpH}px;
-        border-right:${INNER_BORDER};
-        border-radius: 0 0 0 3px;
-        box-shadow: inset -1px 0 0 rgba(255,255,255,0.6);
-      ">
-        <div class="cell-label">粗利</div>
-        <div class="cell-amount">${fmtMan(gp_man)}</div>
-      </div>
+        <!-- ③ 粗利 -->
+        <div class="bp-cell cell-gross" style="
+          left:${grossLeft.toFixed(3)}%; top:${vcH}px;
+          width:${grossPct.toFixed(3)}%; height:${gpH}px;
+          border-right:${INNER_BORDER};
+        ">
+          <div class="cell-label">粗利</div>
+          <div class="cell-amount">${fmtMan(gp_man)}</div>
+        </div>
 
-      <!-- ④ 固定費ラベル列: col2, 変動費の下・subH（人件費+その他固定費のみ, 利益は含まない） -->
-      <div class="bp-cell cell-fixed" style="
-        left:${fixedLabelLeft.toFixed(3)}%; top:${vcH}px;
-        width:${fixedLabelPct.toFixed(3)}%; height:${subH}px;
-        border: 2.5px solid #f97316;
-        border-bottom: 2.5px solid #f97316;
-        background: #fff7ed;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        padding:6px 4px;
-      ">
-        ${isCluster && hqFixed_man > 0 ? (() => {
-          const hqPct = fc_man > 0 ? hqFixed_man / fc_man : 0;
-          const overlayH = Math.round(subH * hqPct);
-          const minOverlayH = overlayH < 28 ? 28 : overlayH;
-          return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
-            <div class="hq-overlay-top" style="height:100%;">
-              <div class="hq-overlay-label">本社経費</div>
-              <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
-            </div>
-          </div>`;
-        })() : ''}
-        <div class="cell-label" style="color:#9a3412; position:relative; z-index:5;">固定費</div>
-        <div class="cell-amount" style="color:#9a3412; position:relative; z-index:5;">${fmtMan(fc_man)}</div>
-      </div>
+        <!-- ④ 固定費ラベル列 -->
+        <div class="bp-cell cell-fixed" style="
+          left:${fixedLabelLeft.toFixed(3)}%; top:${vcH}px;
+          width:${fixedLabelPct.toFixed(3)}%; height:${subH}px;
+          border-right:${INNER_BORDER};
+          border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        ">
+          ${isCluster && hqFixed_man > 0 ? (() => {
+            const hqPct = fc_man > 0 ? hqFixed_man / fc_man : 0;
+            const overlayH = Math.round(subH * hqPct);
+            const minOverlayH = overlayH < 28 ? 28 : overlayH;
+            return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
+              <div class="hq-overlay-top" style="height:100%;">
+                <div class="hq-overlay-label">本社経費</div>
+                <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
+              </div>
+            </div>`;
+          })() : ''}
+          <div class="cell-label" style="position:relative; z-index:5;">固定費</div>
+          <div class="cell-amount" style="position:relative; z-index:5;">${fmtMan(fc_man)}</div>
+        </div>
 
-      <!-- ⑤ 人件費: col3, 変動費の下・上端 (personnelH) -->
-      <div class="bp-cell cell-personnel" style="
-        left:${fixedSubLeft.toFixed(3)}%; top:${vcH}px;
-        width:${fixedSubPct.toFixed(3)}%; height:${personnelH}px;
-        border-left:${INNER_BORDER};
-        border-bottom:${INNER_BORDER};
-        box-shadow: inset -1px -1px 0 rgba(255,255,255,0.6);
-      ">
-        ${isCluster && hqPersonnel_man > 0 ? (() => {
-          const hqPct = pc_man > 0 ? hqPersonnel_man / pc_man : 0;
-          const overlayH = Math.round(personnelH * hqPct);
-          const minOverlayH = overlayH < 28 ? 28 : overlayH;
-          return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
-            <div class="hq-overlay-top" style="height:100%;">
-              <div class="hq-overlay-label">本社経費</div>
-              <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
-            </div>
-          </div>`;
-        })() : ''}
-        <div class="cell-label" style="position:relative; z-index:5;">人件費</div>
-        <div class="cell-amount" style="position:relative; z-index:5;">${fmtMan(pc_man)}</div>
-      </div>
+        <!-- ⑤ 人件費 -->
+        <div class="bp-cell cell-personnel" style="
+          left:${fixedSubLeft.toFixed(3)}%; top:${vcH}px;
+          width:${fixedSubPct.toFixed(3)}%; height:${personnelH}px;
+          border-bottom:${INNER_BORDER};
+        ">
+          ${isCluster && hqPersonnel_man > 0 ? (() => {
+            const hqPct = pc_man > 0 ? hqPersonnel_man / pc_man : 0;
+            const overlayH = Math.round(personnelH * hqPct);
+            const minOverlayH = overlayH < 28 ? 28 : overlayH;
+            return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
+              <div class="hq-overlay-top" style="height:100%;">
+                <div class="hq-overlay-label">本社経費</div>
+                <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
+              </div>
+            </div>`;
+          })() : ''}
+          <div class="cell-label" style="position:relative; z-index:5;">人件費</div>
+          <div class="cell-amount" style="position:relative; z-index:5;">${fmtMan(pc_man)}</div>
+        </div>
 
-      <!-- ⑥ その他固定費: col3, 人件費の下 (otherH) -->
-      <!--   下端に太い区切り線: この下が利益（固定費の外）を示す -->
-      <div class="bp-cell cell-other" style="
-        left:${fixedSubLeft.toFixed(3)}%; top:${vcH + personnelH}px;
-        width:${fixedSubPct.toFixed(3)}%; height:${otherH}px;
-        border-left:${INNER_BORDER};
-        border-bottom: 2.5px solid #f97316;
-        box-shadow: inset -1px 0 0 rgba(255,255,255,0.6);
-      ">
-        ${isCluster && hqOtherFixed_man > 0 ? (() => {
-          const hqPct = ofc_man > 0 ? hqOtherFixed_man / ofc_man : 0;
-          const overlayH = Math.round(otherH * hqPct);
-          const minOverlayH = overlayH < 28 ? 28 : overlayH;
-          return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
-            <div class="hq-overlay-top" style="height:100%;">
-              <div class="hq-overlay-label">本社経費</div>
-              <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
-            </div>
-          </div>`;
-        })() : ''}
-        <div class="cell-label" style="font-size:0.85rem; position:relative; z-index:5;">その他<br>固定費</div>
-        <div class="cell-amount" style="position:relative; z-index:5;">${fmtMan(ofc_man)}</div>
-      </div>
+        <!-- ⑥ その他固定費 -->
+        <div class="bp-cell cell-other" style="
+          left:${fixedSubLeft.toFixed(3)}%; top:${vcH + personnelH}px;
+          width:${fixedSubPct.toFixed(3)}%; height:${otherH}px;
+          border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        ">
+          ${isCluster && hqOtherFixed_man > 0 ? (() => {
+            const hqPct = ofc_man > 0 ? hqOtherFixed_man / ofc_man : 0;
+            const overlayH = Math.round(otherH * hqPct);
+            const minOverlayH = overlayH < 28 ? 28 : overlayH;
+            return `<div class="hq-overlay" style="height:${minOverlayH}px; top:0;">
+              <div class="hq-overlay-top" style="height:100%;">
+                <div class="hq-overlay-label">本社経費</div>
+                <div class="hq-overlay-pct">${(hqPct*100).toFixed(1)}%</div>
+              </div>
+            </div>`;
+          })() : ''}
+          <div class="cell-label" style="font-size:0.78rem; position:relative; z-index:5;">その他固定費</div>
+          <div class="cell-amount" style="position:relative; z-index:5;">${fmtMan(ofc_man)}</div>
+        </div>
 
-      <!-- ⑦ 利益: 固定費ラベル列の左端〜右端（col2+col3 全幅）, 固定費の下・最下端 (opH) -->
-      <!--   本家通り: left=fixedLabelLeft, width=fixedLabelPct+fixedSubPct=fixedPct 全幅 -->
-      <!--   修正(Issue 1): 右辺の border を消して CF 拡張部の税引後利益と「お金の流れ」を連続させる -->
-      <div class="bp-cell cell-profit" style="
-        left:${fixedLabelLeft.toFixed(3)}%; top:${vcH + subH}px;
-        width:${fixedPct.toFixed(3)}%; height:${opH}px;
-        border-left: 2.5px solid #f97316;
-        border-top: 2.5px solid #f97316;
-        border-right: none;
-        border-radius: 0 0 0 0;
-        background: linear-gradient(90deg, #fef3c7 0%, #fef3c7 80%, #fff9e6 100%);
-      ">
-        <div class="cell-label" style="color:#92400e; font-weight:600;">利益</div>
-        <div class="cell-amount" style="color:#92400e;">${fmtMan(op_man_adj)}</div>
-        ${opH >= 64 ? `<div style="font-size:0.62rem; color:#b45309; margin-top:4px; text-align:center; line-height:1.4; font-weight:500; letter-spacing:0.01em;">（粗利 − 固定費）</div>` : ''}
-      </div>
+        <!-- ⑦ 利益 -->
+        <div class="bp-cell cell-profit" style="
+          left:${fixedLabelLeft.toFixed(3)}%; top:${vcH + subH}px;
+          width:${fixedPct.toFixed(3)}%; height:${opH}px;
+        ">
+          <div class="cell-label">利益</div>
+          <div class="cell-amount">${fmtMan(op_man_adj)}</div>
+        </div>
 
-      <!-- ⑧ 粗利率バッジ: 粗利ブロック下部中央 -->
-      <div class="oval-badge" id="badge-gm" style="
-        left:${(grossLeft + grossPct * 0.5).toFixed(2)}%;
-        top:${vcH + gpH - 70}px;
-        transform:translateX(-50%);
-      ">
-        <span class="badge-label">粗利率</span>
-        <span class="badge-value">${grossMarginStr}</span>
-      </div>
+        <!-- ⑧ 粗利率タグ（粗利セル右下） -->
+        <div class="inline-tag" id="tag-gm" style="
+          left:${(grossLeft + grossPct - 1).toFixed(2)}%;
+          top:${PUZZLE_H - 32}px;
+          transform:translateX(-100%);
+        ">
+          <span class="tag-label">粗利率</span>
+          <span class="tag-value">${grossMarginStr}</span>
+        </div>
 
-      <!-- ⑨ 労働分配率バッジ: 粗利/固定費ラベル境界の上部 -->
-      <div class="oval-badge" id="badge-ls" style="
-        left:${fixedLabelLeft.toFixed(2)}%;
-        top:${vcH + 20}px;
-        transform:translateX(-50%);
-      ">
-        <span class="badge-label">労働分配率</span>
-        <span class="badge-value">${laborShareStr}</span>
-      </div>
+        <!-- ⑨ 労働分配率タグ（人件費セル右下、HQ オーバーレイと干渉しない位置） -->
+        <div class="inline-tag" id="tag-ls" style="
+          left:${(fixedSubLeft + fixedSubPct - 1).toFixed(2)}%;
+          top:${vcH + personnelH - 32}px;
+          transform:translateX(-100%);
+        ">
+          <span class="tag-label">労働分配率</span>
+          <span class="tag-value">${laborShareStr}</span>
+        </div>
 
-    </div><!-- /#puzzle-canvas -->
-    <!-- CF 拡張エリア（puzzle-row の右側, JS で動的に生成） -->
-    <div id="cf-extension-row" style="height:${PUZZLE_H}px; position:relative;"></div>
+      </div><!-- /#puzzle-canvas -->
+      <!-- CF 拡張エリア -->
+      <div id="cf-extension-row" style="height:${PUZZLE_H}px; position:relative;"></div>
     </div><!-- /.puzzle-row -->
-  </div><!-- /.puzzle-wrapper -->
-`;
+    </div><!-- /.puzzle-row-wrap -->
+  `;
 
   return {
     html,
     layout: { vcH, gpH, opH, subH, otherH, personnelH, PUZZLE_H,
               fixedSubLeft, fixedSubPct, SALES_PCT, grossPct, fixedLabelPct,
-              op_man_adj }  // CF拡張の逆算用
+              op_man_adj }
   };
 }
 
@@ -1238,12 +1256,10 @@ function updateAllocationNote(selectVal, bp) {
   if (!noteEl) return;
 
   if (!selectVal || !selectVal.startsWith('cluster:')) {
-    // 全社合計: 注記を非表示
     noteEl.style.display = 'none';
     return;
   }
 
-  // クラスタ選択: 配賦情報を注記に反映
   const clusterName = selectVal.slice('cluster:'.length);
   const hqAlloc = bp && bp._hq_allocation;
   const hqTotal = hqAlloc ? hqAlloc.hq_cost_total : null;
@@ -1258,7 +1274,7 @@ function updateAllocationNote(selectVal, bp) {
   }
 
   noteEl.textContent =
-    `※ クラスタ表示時: 本社経費（本部 + その他「総務部」推定 ${hqAmountStr}）の ${hqRatio}% を${clusterName}に配賦`;
+    `クラスタ表示: 本社経費（本部 + その他「総務部」推定 ${hqAmountStr}）の ${hqRatio}% を${clusterName}に配賦`;
   noteEl.style.display = 'block';
 }
 
@@ -1272,7 +1288,6 @@ function render(bp, commentary) {
   const pc  = bp.personnel_cost   || 0;
   const ofc = bp.other_fixed_cost || 0;
 
-  // 期間表示
   const period = bp.period || {};
   const periodStr = period.start && period.end
     ? `${period.start} 〜 ${period.end}`
@@ -1280,67 +1295,80 @@ function render(bp, commentary) {
   document.getElementById('period-label').textContent = periodStr;
 
   const { html: puzzleHtml, layout } = buildPuzzle(bp);
+  const kpiHtml = buildKpiStrip(bp, layout.op_man_adj);
 
   const html = `
-  ${puzzleHtml}
+    ${kpiHtml}
 
-  <!-- AI コメント -->
-  <div class="commentary-card">
-    <h2>● AI 簡易分析（ブロックパズル指標）</h2>
-    <div id="commentary-text">${commentary || '（コメント取得中...）'}</div>
-  </div>
+    <div class="puzzle-card">
+      <div class="card-head">
+        <h2>お金のブロックパズル</h2>
+        <span class="head-sub">和仁達也方式 ・ 経常利益ベース</span>
+      </div>
 
-  <!-- 内訳テーブル（折りたたみ）-->
-  <div class="breakdown-section">
-    <details>
-      <summary>■ 勘定科目分類（ブロックパズル基準）　詳細を見る ▼</summary>
-      <div class="breakdown-inner">
-        <div class="breakdown-grid">
-          <div class="breakdown-col">
-            <h3>売上高内訳</h3>
-            ${renderBreakdownItems(bp.revenue_breakdown, rev)}
-          </div>
-          <div class="breakdown-col">
-            <h3>変動費内訳</h3>
-            ${renderBreakdownItems(bp.variable_breakdown, vc)}
-          </div>
-          <div class="breakdown-col">
-            <h3>人件費内訳</h3>
-            ${renderBreakdownItems(bp.personnel_breakdown, pc)}
-          </div>
-          <div class="breakdown-col">
-            <h3>その他固定費 上位 10 科目</h3>
-            ${renderBreakdownItems((bp.other_fixed_breakdown || []).slice(0, 10), ofc)}
+      <div class="formula-row">
+        <span class="formula-chip">売上 ＝ 変動費 ＋ <span class="em" style="color:var(--green-700);">粗利</span></span>
+        <span class="formula-divider"></span>
+        <span class="formula-chip"><span class="em" style="color:var(--green-700);">粗利</span> ＝ <span class="em" style="color:var(--warn-700);">固定費</span> ＋ <span class="em" style="color:var(--gold-700);">利益</span></span>
+        <span class="formula-divider"></span>
+        <span class="formula-chip"><span class="em" style="color:var(--warn-700);">固定費</span> ＝ 人件費 ＋ その他固定費</span>
+        <span class="formula-divider"></span>
+        <span class="formula-chip"><span class="em" style="color:var(--gold-700);">利益</span> − 法人税 ＝ 税引後利益</span>
+        <span class="formula-divider"></span>
+        <span class="formula-chip">税引後利益 ＋ 減価償却費 ＝ CF生成額</span>
+      </div>
+
+      <div class="formula-note">
+        ※「利益」は経常利益、「固定費」は販管費から営業外損益を吸収した実質固定費（和仁達也方式準拠）
+      </div>
+
+      <div id="cluster-allocation-note"></div>
+
+      ${puzzleHtml}
+    </div>
+
+    <div class="commentary-card">
+      <h2>AI 簡易分析</h2>
+      <div id="commentary-text">${commentary || ''}</div>
+    </div>
+
+    <div class="breakdown-section">
+      <details>
+        <summary>勘定科目分類（ブロックパズル基準）</summary>
+        <div class="breakdown-inner">
+          <div class="breakdown-grid">
+            <div class="breakdown-col">
+              <h3>売上高内訳</h3>
+              ${renderBreakdownItems(bp.revenue_breakdown, rev)}
+            </div>
+            <div class="breakdown-col">
+              <h3>変動費内訳</h3>
+              ${renderBreakdownItems(bp.variable_breakdown, vc)}
+            </div>
+            <div class="breakdown-col">
+              <h3>人件費内訳</h3>
+              ${renderBreakdownItems(bp.personnel_breakdown, pc)}
+            </div>
+            <div class="breakdown-col">
+              <h3>その他固定費 上位 10 科目</h3>
+              ${renderBreakdownItems((bp.other_fixed_breakdown || []).slice(0, 10), ofc)}
+            </div>
           </div>
         </div>
-      </div>
-    </details>
-  </div>
+      </details>
+    </div>
   `;
 
   document.getElementById('main-content').innerHTML = html;
 
-  // 配賦注記の更新（innerHTML 挿入後に DOM が確定してから）
   updateAllocationNote(_currentSelectVal, bp);
 
-  // CF 拡張を DOM 挿入後に描画（canvas サイズが確定してから）
   requestAnimationFrame(() => renderCFExtension(bp, layout));
 }
 
 /* ═══════════════════════════════════════════════════════
- * 初期化
+ * リサイズ対応
  * ═══════════════════════════════════════════════════════ */
-async function init() {
-  try {
-    const { bp, commentary } = await loadData(_currentSelectVal);
-    render(bp, commentary);
-  } catch (e) {
-    document.getElementById('main-content').innerHTML =
-      `<div class="error-msg">データ読み込みエラー: ${e.message}</div>`;
-  }
-}
-
-/* ── リサイズ対応 ─────────────────────────────────── */
 let _bpData = null;
 let _bpCmt  = '';
 let _rTimer;
@@ -1351,7 +1379,9 @@ window.addEventListener('resize', () => {
   }, 300);
 });
 
-/* ── 更新ボタン ──────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════
+ * 更新ボタン + ピル初期化
+ * ═══════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('refresh-btn');
   if (btn) {
