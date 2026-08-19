@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>桜千株式会社 — お金のブロックパズル (2026-08-18 09:00 JST)</title>
+  <title>桜千株式会社 — お金のブロックパズル (2026-08-19 09:22 JST)</title>
 
   <!-- Inter (英数字) + Noto Sans JP (日本語) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -502,6 +502,30 @@
     .cell-other .cell-label,     .cell-other .cell-amount     { color: var(--gray-700); }
     .cell-profit .cell-label,    .cell-profit .cell-amount    { color: var(--gold-700); }
 
+    /* ──── 自動外出しラベル（セルに収まらない内容をピルで外へ）──── */
+    .auto-out {
+      position: absolute;
+      background: var(--gray-0);
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      padding: 4px 10px;
+      text-align: center;
+      white-space: nowrap;
+      z-index: 30;
+      pointer-events: none;
+      box-shadow: var(--shadow-sm);
+      font-family: var(--font-num);
+      line-height: 1.25;
+    }
+    .auto-out .cell-label, .auto-out .cf-label {
+      font-size: 0.66rem; font-weight: 600; letter-spacing: .04em;
+    }
+    .auto-out .cell-amount, .auto-out .cf-amount {
+      font-size: 0.86rem; font-weight: 700; margin-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .auto-out .cf-breakdown { margin-top: 3px !important; }
+
     /* ──── インラインタグ（粗利率・労働分配率）──── */
     /* 旧 oval-badge を置き換え。ブロックの角に控えめに配置 */
     .inline-tag {
@@ -801,8 +825,8 @@
     }
   </style>
 <script>
-window.__BUILD_DATE_JST__ = "2026-08-18 09:00 JST";
-window.__EMBEDDED_DATA__ = {"build_timestamp":"2026-08-18T09:00:13.390303+09:00","build_date_jst":"2026-08-18 09:00 JST","default_year_key":"fy2026","fiscal_years":[{"year_key":"fy2026","year_label":"令和 8 年度","period":"2026-06 〜 2027-05","fiscal_year":2026,"data_available":true,"note":null,"全社合計":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":32071959,"revenue_breakdown":[{"name":"工事売上高","value":21301911},{"name":"就労移行支援売上高","value":10691680},{"name":"就労定着支援売上高","value":62720},{"name":"総務売上高","value":15648}],"variable_cost":10372678,"variable_breakdown":[{"name":"外注加工費(製)","value":9039857},{"name":"産廃処分費","value":1150764},{"name":"外注費","value":176838},{"name":"商品仕入高","value":3660},{"name":"荷造運賃","value":1559}],"gross_profit":21699281,"fixed_cost":14467525,"personnel_cost":7879936,"other_fixed_cost":6587589,"personnel_breakdown":[{"name":"給料賃金","value":3883723},{"name":"給料賃金(製)","value":986196},{"name":"法定福利費","value":861376},{"name":"賞与","value":752719},{"name":"役員報酬","value":600000},{"name":"法定福利費(製)","value":307521},{"name":"福利厚生費","value":210669},{"name":"賞与(製)","value":198152},{"name":"福利厚生費(製)","value":79580}],"other_fixed_breakdown":[{"name":"地代家賃","value":1053258},{"name":"車両費","value":585417},{"name":"備品・消耗品費","value":551964},{"name":"管理諸費","value":548600},{"name":"リース料","value":538904},{"name":"支払手数料","value":483744},{"name":"保険料","value":407820},{"name":"通信費","value":397866},{"name":"雑費","value":311057},{"name":"旅費交通費","value":271395},{"name":"水道光熱費","value":269238},{"name":"広告宣伝費","value":158691},{"name":"接待交際費","value":121375},{"name":"修繕費","value":51572},{"name":"減価償却費","value":47379},{"name":"新聞図書費","value":7526},{"name":"租税公課","value":2376},{"name":"荷造運賃","value":1559}],"profit":7231756,"income_taxes":0,"net_income":7231756,"depreciation":69244,"cash_generation":7301000,"operating_income_ref":7391352,"non_operating_net_ref":-159596,"ordinary_income_ref":7231756,"metrics":{"gross_margin_pct":67.7,"labor_share_pct":36.3,"profit_margin_pct":22.5,"variable_cost_ratio_pct":32.3}},"commentary":"売上高3,207万円に対し変動費1,037万円（32.3%）を差し引いた粗利は2,169万円。粗利率67.7%は非常に高く、変動費比率32.3%の低コスト構造が際立つ。粗利の内訳は人件費787万円・その他固定費658万円・利益723万円。労働分配率36.3%は適正水準。利益率22.5%は優良ライン。利益（経常利益）723万円、法人税0円を引いた税引後利益723万円に減価償却6万円を足し戻したキャッシュ生成額730万円（売上比22.8%）で内部留保に十分な余力。"},"工事部":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":21301911,"revenue_breakdown":[{"name":"工事売上高","value":21301911}],"variable_cost":6889441,"variable_breakdown":[{"name":"外注加工費(製)","value":6004193},{"name":"産廃処分費","value":764327},{"name":"外注費","value":117454},{"name":"商品仕入高","value":2431},{"name":"荷造運賃","value":1035}],"gross_profit":14412470,"fixed_cost":9364132,"personnel_cost":5195269,"other_fixed_cost":4168863,"personnel_breakdown":[{"name":"給料賃金","value":2579534},{"name":"給料賃金(製)","value":655023},{"name":"法定福利費","value":572118},{"name":"賞与","value":499949},{"name":"役員報酬","value":360000},{"name":"法定福利費(製)","value":204253},{"name":"福利厚生費","value":139924},{"name":"賞与(製)","value":131611},{"name":"福利厚生費(製)","value":52856}],"other_fixed_breakdown":[{"name":"地代家賃","value":631955},{"name":"車両費","value":388829},{"name":"備品・消耗品費","value":366610},{"name":"リース料","value":357935},{"name":"管理諸費","value":329160},{"name":"支払手数料","value":290246},{"name":"保険料","value":244692},{"name":"通信費","value":238720},{"name":"雑費","value":206601},{"name":"旅費交通費","value":180258},{"name":"水道光熱費","value":161543},{"name":"広告宣伝費","value":105401},{"name":"接待交際費","value":80616},{"name":"修繕費","value":34254},{"name":"減価償却費","value":28427},{"name":"新聞図書費","value":4516},{"name":"租税公課","value":1426},{"name":"荷造運賃","value":1035}],"profit":5048338,"income_taxes":0,"net_income":5048338,"depreciation":45991,"cash_generation":5094329,"metrics":{"gross_margin_pct":67.7,"labor_share_pct":36.0,"profit_margin_pct":23.7,"variable_cost_ratio_pct":32.3},"operating_income_ref":5048338,"non_operating_net_ref":0,"ordinary_income_ref":5048338,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.6642,"_hq_allocation":{"hq_cost_total":3817807,"hq_ratio":0.6,"hq_cost_allocated":2290684,"dept_own_fixed":7073448,"personnel_hq":360000,"other_fixed_hq":1930684},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 66.4% / 固定費: 部門固有（全社固定費 - 本社費用 × 66.4%）+ 本社費用配賦（本社推定 3,817,807 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高2,130万円に対し変動費688万円（32.3%）を差し引いた粗利は1,441万円。粗利率67.7%は非常に高く、変動費比率32.3%の低コスト構造が際立つ。粗利の内訳は人件費519万円・その他固定費416万円・利益504万円。労働分配率36.0%は適正水準。利益率23.7%は優良ライン。工事部の利益504万円は、本社経費229万円（全社本社経費の60%）を負担した結果の実質利益で、本社配賦前の単体利益は733万円。利益（経常利益）504万円、法人税0円を引いた税引後利益504万円に減価償却4万円を足し戻したキャッシュ生成額509万円（売上比23.9%）で内部留保に十分な余力。"},"事業開発部":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":10691680,"revenue_breakdown":[{"name":"就労移行支援売上高","value":10691680}],"variable_cost":3457891,"variable_breakdown":[{"name":"外注加工費(製)","value":3013575},{"name":"産廃処分費","value":383625},{"name":"外注費","value":58952},{"name":"商品仕入高","value":1220},{"name":"荷造運賃","value":520}],"gross_profit":7233789,"fixed_cost":5077370,"personnel_cost":2666878,"other_fixed_cost":2410492,"personnel_breakdown":[{"name":"給料賃金","value":1294699},{"name":"給料賃金(製)","value":328764},{"name":"法定福利費","value":287153},{"name":"賞与","value":250930},{"name":"役員報酬","value":240000},{"name":"法定福利費(製)","value":102517},{"name":"福利厚生費","value":70230},{"name":"賞与(製)","value":66057},{"name":"福利厚生費(製)","value":26529}],"other_fixed_breakdown":[{"name":"地代家賃","value":421303},{"name":"管理諸費","value":219440},{"name":"車両費","value":195158},{"name":"支払手数料","value":193498},{"name":"備品・消耗品費","value":184006},{"name":"リース料","value":179652},{"name":"保険料","value":163128},{"name":"通信費","value":159146},{"name":"水道光熱費","value":107695},{"name":"雑費","value":103696},{"name":"旅費交通費","value":90474},{"name":"広告宣伝費","value":52902},{"name":"接待交際費","value":40462},{"name":"減価償却費","value":18952},{"name":"修繕費","value":17192},{"name":"新聞図書費","value":3010},{"name":"租税公課","value":950},{"name":"荷造運賃","value":520}],"profit":2156419,"income_taxes":0,"net_income":2156419,"depreciation":23084,"cash_generation":2179503,"metrics":{"gross_margin_pct":67.7,"labor_share_pct":36.9,"profit_margin_pct":20.2,"variable_cost_ratio_pct":32.3},"operating_income_ref":2156419,"non_operating_net_ref":0,"ordinary_income_ref":2156419,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.3334,"_hq_allocation":{"hq_cost_total":3817807,"hq_ratio":0.4,"hq_cost_allocated":1527123,"dept_own_fixed":3550247,"personnel_hq":240000,"other_fixed_hq":1287123},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 33.3% / 固定費: 部門固有（全社固定費 - 本社費用 × 33.3%）+ 本社費用配賦（本社推定 3,817,807 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高1,069万円に対し変動費345万円（32.3%）を差し引いた粗利は723万円。粗利率67.7%は非常に高く、変動費比率32.3%の低コスト構造が際立つ。粗利の内訳は人件費266万円・その他固定費241万円・利益215万円。労働分配率36.9%は適正水準。利益率20.2%は優良ライン。事業開発部の利益215万円は、本社経費152万円（全社本社経費の40%）を負担した結果の実質利益で、本社配賦前の単体利益は368万円。利益（経常利益）215万円、法人税0円を引いた税引後利益215万円に減価償却2万円を足し戻したキャッシュ生成額217万円（売上比20.4%）で内部留保に十分な余力。"}},{"year_key":"fy2025","year_label":"令和 7 年度","period":"2025-06 〜 2026-05","fiscal_year":2025,"data_available":true,"note":null,"全社合計":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":173546931,"revenue_breakdown":[{"name":"工事売上高","value":133213715},{"name":"就労移行支援売上高","value":40205770},{"name":"就労定着支援売上高","value":57760},{"name":"総務売上高","value":54686},{"name":"その他売上高","value":15000}],"variable_cost":74157259,"variable_breakdown":[{"name":"外注加工費(製)","value":71969281},{"name":"外注費","value":1953752},{"name":"産廃処分費","value":201650},{"name":"商品仕入高","value":21227},{"name":"荷造運賃","value":11349}],"gross_profit":99389672,"fixed_cost":84026631,"personnel_cost":37137302,"other_fixed_cost":46889329,"personnel_breakdown":[{"name":"給料賃金","value":20777390},{"name":"給料賃金(製)","value":5748892},{"name":"役員報酬","value":3600000},{"name":"法定福利費","value":3285386},{"name":"賞与","value":1144347},{"name":"法定福利費(製)","value":948088},{"name":"福利厚生費","value":821621},{"name":"福利厚生費(製)","value":577863},{"name":"賞与(製)","value":198778},{"name":"研修採用費","value":34937}],"other_fixed_breakdown":[{"name":"地代家賃","value":7510883},{"name":"備品・消耗品費","value":5753456},{"name":"保険料","value":3731847},{"name":"リース料","value":3453476},{"name":"車両費","value":3071940},{"name":"支払手数料","value":2882048},{"name":"旅費交通費","value":2742340},{"name":"通信費","value":2196217},{"name":"接待交際費","value":2022684},{"name":"水道光熱費","value":1789187},{"name":"管理諸費","value":1612400},{"name":"減価償却費","value":1110276},{"name":"雑費","value":1074418},{"name":"広告宣伝費","value":593760},{"name":"修繕費","value":479320},{"name":"租税公課","value":294035},{"name":"新聞図書費","value":63078},{"name":"諸会費","value":12364},{"name":"荷造運賃","value":11349}],"profit":15363041,"income_taxes":74261,"net_income":15288780,"depreciation":2212609,"cash_generation":17501389,"operating_income_ref":16790919,"non_operating_net_ref":-1427878,"ordinary_income_ref":15363041,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":37.4,"profit_margin_pct":8.9,"variable_cost_ratio_pct":42.7}},"commentary":"売上高17,354万円に対し変動費7,415万円（42.7%）を差し引いた粗利は9,938万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費3,713万円・その他固定費4,688万円・利益1,536万円。労働分配率37.4%は適正水準。利益率8.9%は平均的。利益（経常利益）1,536万円、法人税7万円を引いた税引後利益1,528万円に減価償却221万円を足し戻したキャッシュ生成額1,750万円（売上比10.1%）で内部留保に十分な余力。"},"工事部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":133213715,"revenue_breakdown":[{"name":"工事売上高","value":133213715}],"variable_cost":56922723,"variable_breakdown":[{"name":"外注加工費(製)","value":55243243},{"name":"外注費","value":1499690},{"name":"産廃処分費","value":154785},{"name":"商品仕入高","value":16294},{"name":"荷造運賃","value":8711}],"gross_profit":76290992,"fixed_cost":60341660,"personnel_cost":27903057,"other_fixed_cost":32438603,"personnel_breakdown":[{"name":"給料賃金","value":15948616},{"name":"給料賃金(製)","value":4412819},{"name":"法定福利費","value":2521845},{"name":"役員報酬","value":2160000},{"name":"賞与","value":878395},{"name":"法定福利費(製)","value":727747},{"name":"福利厚生費","value":630672},{"name":"福利厚生費(製)","value":443565},{"name":"賞与(製)","value":152581},{"name":"研修採用費","value":26817}],"other_fixed_breakdown":[{"name":"地代家賃","value":4506530},{"name":"備品・消耗品費","value":4416323},{"name":"リース料","value":2650870},{"name":"車両費","value":2358005},{"name":"保険料","value":2239108},{"name":"旅費交通費","value":2105006},{"name":"支払手数料","value":1729229},{"name":"接待交際費","value":1552602},{"name":"通信費","value":1317730},{"name":"水道光熱費","value":1073512},{"name":"管理諸費","value":967440},{"name":"雑費","value":824718},{"name":"減価償却費","value":666166},{"name":"広告宣伝費","value":455767},{"name":"修繕費","value":367924},{"name":"租税公課","value":176421},{"name":"新聞図書費","value":37847},{"name":"荷造運賃","value":8711},{"name":"諸会費","value":7418}],"profit":15949332,"income_taxes":57002,"net_income":15892330,"depreciation":1698387,"cash_generation":17590717,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":36.6,"profit_margin_pct":12.0,"variable_cost_ratio_pct":42.7},"operating_income_ref":15949332,"non_operating_net_ref":0,"ordinary_income_ref":15949332,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.7676,"_hq_allocation":{"hq_cost_total":24802335,"hq_ratio":0.6,"hq_cost_allocated":14881401,"dept_own_fixed":45460259,"personnel_hq":2160000,"other_fixed_hq":12721401},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 76.8% / 固定費: 部門固有（全社固定費 - 本社費用 × 76.8%）+ 本社費用配賦（本社推定 24,802,335 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高13,321万円に対し変動費5,692万円（42.7%）を差し引いた粗利は7,629万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費2,790万円・その他固定費3,243万円・利益1,594万円。労働分配率36.6%は適正水準。利益率12.0%は良好。工事部の利益1,594万円は、本社経費1,488万円（全社本社経費の60%）を負担した結果の実質利益で、本社配賦前の単体利益は3,083万円。利益（経常利益）1,594万円、法人税5万円を引いた税引後利益1,589万円に減価償却169万円を足し戻したキャッシュ生成額1,759万円（売上比13.2%）で内部留保に十分な余力。"},"事業開発部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":40205770,"revenue_breakdown":[{"name":"就労移行支援売上高","value":40205770}],"variable_cost":17180077,"variable_breakdown":[{"name":"外注加工費(製)","value":16673187},{"name":"外注費","value":452627},{"name":"産廃処分費","value":46716},{"name":"商品仕入高","value":4918},{"name":"荷造運賃","value":2629}],"gross_profit":23025693,"fixed_cost":23641479,"personnel_cost":9209616,"other_fixed_cost":14431863,"personnel_breakdown":[{"name":"給料賃金","value":4813516},{"name":"役員報酬","value":1440000},{"name":"給料賃金(製)","value":1331851},{"name":"法定福利費","value":761128},{"name":"賞与","value":265112},{"name":"法定福利費(製)","value":219644},{"name":"福利厚生費","value":190346},{"name":"福利厚生費(製)","value":133874},{"name":"賞与(製)","value":46051},{"name":"研修採用費","value":8094}],"other_fixed_breakdown":[{"name":"地代家賃","value":3004353},{"name":"保険料","value":1492739},{"name":"備品・消耗品費","value":1332908},{"name":"支払手数料","value":1152819},{"name":"通信費","value":878487},{"name":"リース料","value":800070},{"name":"水道光熱費","value":715675},{"name":"車両費","value":711679},{"name":"管理諸費","value":644960},{"name":"旅費交通費","value":635320},{"name":"接待交際費","value":468597},{"name":"減価償却費","value":444110},{"name":"雑費","value":248911},{"name":"広告宣伝費","value":137557},{"name":"租税公課","value":117614},{"name":"修繕費","value":111044},{"name":"新聞図書費","value":25231},{"name":"諸会費","value":4946},{"name":"荷造運賃","value":2629}],"profit":-615786,"income_taxes":17204,"net_income":-632990,"depreciation":512597,"cash_generation":-120393,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":40.0,"profit_margin_pct":-1.5,"variable_cost_ratio_pct":42.7},"operating_income_ref":-615786,"non_operating_net_ref":0,"ordinary_income_ref":-615786,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.2317,"_hq_allocation":{"hq_cost_total":24802335,"hq_ratio":0.4,"hq_cost_allocated":9920934,"dept_own_fixed":13720545,"personnel_hq":1440000,"other_fixed_hq":8480934},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 23.2% / 固定費: 部門固有（全社固定費 - 本社費用 × 23.2%）+ 本社費用配賦（本社推定 24,802,335 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高4,020万円に対し変動費1,718万円（42.7%）を差し引いた粗利は2,302万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費920万円・その他固定費1,443万円・利益-615,786円。労働分配率40.0%は適正水準。損失（-1.5%）で構造改革が必要。事業開発部の利益-615,786円は、本社経費992万円（全社本社経費の40%）を負担した結果の実質利益で、本社配賦前の単体利益は930万円。利益（経常利益）-615,786円、法人税1万円を引いた税引後利益-632,990円に減価償却51万円を足し戻したキャッシュ生成額-120,393円（売上比-0.3%）は再投資余力が限定的。"}}]};
+window.__BUILD_DATE_JST__ = "2026-08-19 09:22 JST";
+window.__EMBEDDED_DATA__ = {"build_timestamp":"2026-08-19T09:22:29.515602+09:00","build_date_jst":"2026-08-19 09:22 JST","default_year_key":"fy2026","fiscal_years":[{"year_key":"fy2026","year_label":"令和 8 年度","period":"2026-06 〜 2027-05","fiscal_year":2026,"data_available":true,"note":null,"全社合計":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":32071959,"revenue_breakdown":[{"name":"工事売上高","value":21301911},{"name":"就労移行支援売上高","value":10691680},{"name":"就労定着支援売上高","value":62720},{"name":"総務売上高","value":15648}],"variable_cost":10397837,"variable_breakdown":[{"name":"外注加工費(製)","value":9039857},{"name":"産廃処分費","value":1171286},{"name":"外注費","value":181475},{"name":"商品仕入高","value":3660},{"name":"荷造運賃","value":1559}],"gross_profit":21674122,"fixed_cost":14863180,"personnel_cost":7949991,"other_fixed_cost":6913189,"personnel_breakdown":[{"name":"給料賃金","value":3883723},{"name":"給料賃金(製)","value":986196},{"name":"法定福利費","value":861376},{"name":"賞与","value":752719},{"name":"役員報酬","value":600000},{"name":"法定福利費(製)","value":307521},{"name":"福利厚生費","value":216724},{"name":"賞与(製)","value":198152},{"name":"福利厚生費(製)","value":143580}],"other_fixed_breakdown":[{"name":"地代家賃","value":1217758},{"name":"旅費交通費","value":603786},{"name":"車両費","value":588597},{"name":"備品・消耗品費","value":563589},{"name":"管理諸費","value":548600},{"name":"リース料","value":538904},{"name":"支払手数料","value":486544},{"name":"通信費","value":433005},{"name":"保険料","value":407820},{"name":"雑費","value":316057},{"name":"水道光熱費","value":288082},{"name":"接待交際費","value":169569},{"name":"広告宣伝費","value":158691},{"name":"修繕費","value":51572},{"name":"減価償却費","value":47379},{"name":"租税公課","value":23576},{"name":"新聞図書費","value":7526},{"name":"荷造運賃","value":1559}],"profit":6810942,"income_taxes":0,"net_income":6810942,"depreciation":69244,"cash_generation":6880186,"operating_income_ref":6639489,"non_operating_net_ref":171453,"ordinary_income_ref":6810942,"metrics":{"gross_margin_pct":67.6,"labor_share_pct":36.7,"profit_margin_pct":21.2,"variable_cost_ratio_pct":32.4}},"commentary":"売上高3,207万円に対し変動費1,039万円（32.4%）を差し引いた粗利は2,167万円。粗利率67.6%は非常に高く、変動費比率32.4%の低コスト構造が際立つ。粗利の内訳は人件費794万円・その他固定費691万円・利益681万円。労働分配率36.7%は適正水準。利益率21.2%は優良ライン。利益（経常利益）681万円、法人税0円を引いた税引後利益681万円に減価償却6万円を足し戻したキャッシュ生成額688万円（売上比21.5%）で内部留保に十分な余力。"},"工事部":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":21301911,"revenue_breakdown":[{"name":"工事売上高","value":21301911}],"variable_cost":6906151,"variable_breakdown":[{"name":"外注加工費(製)","value":6004193},{"name":"産廃処分費","value":777958},{"name":"外注費","value":120534},{"name":"商品仕入高","value":2431},{"name":"荷造運賃","value":1035}],"gross_profit":14395760,"fixed_cost":9611358,"personnel_cost":5241799,"other_fixed_cost":4369559,"personnel_breakdown":[{"name":"給料賃金","value":2579534},{"name":"給料賃金(製)","value":655023},{"name":"法定福利費","value":572118},{"name":"賞与","value":499949},{"name":"役員報酬","value":360000},{"name":"法定福利費(製)","value":204253},{"name":"福利厚生費","value":143946},{"name":"賞与(製)","value":131611},{"name":"福利厚生費(製)","value":95365}],"other_fixed_breakdown":[{"name":"地代家賃","value":730655},{"name":"旅費交通費","value":401029},{"name":"車両費","value":390941},{"name":"備品・消耗品費","value":374331},{"name":"リース料","value":357935},{"name":"管理諸費","value":329160},{"name":"支払手数料","value":291926},{"name":"通信費","value":259803},{"name":"保険料","value":244692},{"name":"雑費","value":209922},{"name":"水道光熱費","value":172849},{"name":"接待交際費","value":112626},{"name":"広告宣伝費","value":105401},{"name":"修繕費","value":34254},{"name":"減価償却費","value":28427},{"name":"租税公課","value":14146},{"name":"新聞図書費","value":4516},{"name":"荷造運賃","value":1035}],"profit":4784402,"income_taxes":0,"net_income":4784402,"depreciation":45991,"cash_generation":4830393,"metrics":{"gross_margin_pct":67.6,"labor_share_pct":36.4,"profit_margin_pct":22.5,"variable_cost_ratio_pct":32.4},"operating_income_ref":4784402,"non_operating_net_ref":0,"ordinary_income_ref":4784402,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.6642,"_hq_allocation":{"hq_cost_total":4060290,"hq_ratio":0.6,"hq_cost_allocated":2436174,"dept_own_fixed":7175184,"personnel_hq":360000,"other_fixed_hq":2076174},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 66.4% / 固定費: 部門固有（全社固定費 - 本社費用 × 66.4%）+ 本社費用配賦（本社推定 4,060,290 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高2,130万円に対し変動費690万円（32.4%）を差し引いた粗利は1,439万円。粗利率67.6%は非常に高く、変動費比率32.4%の低コスト構造が際立つ。粗利の内訳は人件費524万円・その他固定費436万円・利益478万円。労働分配率36.4%は適正水準。利益率22.5%は優良ライン。工事部の利益478万円は、本社経費243万円（全社本社経費の60%）を負担した結果の実質利益で、本社配賦前の単体利益は722万円。利益（経常利益）478万円、法人税0円を引いた税引後利益478万円に減価償却4万円を足し戻したキャッシュ生成額483万円（売上比22.7%）で内部留保に十分な余力。"},"事業開発部":{"bp":{"period":{"start":"2026-06-01","end":"2027-05-31"},"revenue":10691680,"revenue_breakdown":[{"name":"就労移行支援売上高","value":10691680}],"variable_cost":3466279,"variable_breakdown":[{"name":"外注加工費(製)","value":3013575},{"name":"産廃処分費","value":390466},{"name":"外注費","value":60497},{"name":"商品仕入高","value":1220},{"name":"荷造運賃","value":520}],"gross_profit":7225401,"fixed_cost":5225425,"personnel_cost":2690232,"other_fixed_cost":2535193,"personnel_breakdown":[{"name":"給料賃金","value":1294699},{"name":"給料賃金(製)","value":328764},{"name":"法定福利費","value":287153},{"name":"賞与","value":250930},{"name":"役員報酬","value":240000},{"name":"法定福利費(製)","value":102517},{"name":"福利厚生費","value":72248},{"name":"賞与(製)","value":66057},{"name":"福利厚生費(製)","value":47865}],"other_fixed_breakdown":[{"name":"地代家賃","value":487103},{"name":"管理諸費","value":219440},{"name":"旅費交通費","value":201281},{"name":"車両費","value":196218},{"name":"支払手数料","value":194618},{"name":"備品・消耗品費","value":187881},{"name":"リース料","value":179652},{"name":"通信費","value":173202},{"name":"保険料","value":163128},{"name":"水道光熱費","value":115233},{"name":"雑費","value":105362},{"name":"接待交際費","value":56528},{"name":"広告宣伝費","value":52902},{"name":"減価償却費","value":18952},{"name":"修繕費","value":17192},{"name":"租税公課","value":9430},{"name":"新聞図書費","value":3010},{"name":"荷造運賃","value":520}],"profit":1999976,"income_taxes":0,"net_income":1999976,"depreciation":23084,"cash_generation":2023060,"metrics":{"gross_margin_pct":67.6,"labor_share_pct":37.2,"profit_margin_pct":18.7,"variable_cost_ratio_pct":32.4},"operating_income_ref":1999976,"non_operating_net_ref":0,"ordinary_income_ref":1999976,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.3334,"_hq_allocation":{"hq_cost_total":4060290,"hq_ratio":0.4,"hq_cost_allocated":1624116,"dept_own_fixed":3601309,"personnel_hq":240000,"other_fixed_hq":1384116},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 33.3% / 固定費: 部門固有（全社固定費 - 本社費用 × 33.3%）+ 本社費用配賦（本社推定 4,060,290 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高1,069万円に対し変動費346万円（32.4%）を差し引いた粗利は722万円。粗利率67.6%は非常に高く、変動費比率32.4%の低コスト構造が際立つ。粗利の内訳は人件費269万円・その他固定費253万円・利益199万円。労働分配率37.2%は適正水準。利益率18.7%は優良ライン。事業開発部の利益199万円は、本社経費162万円（全社本社経費の40%）を負担した結果の実質利益で、本社配賦前の単体利益は362万円。利益（経常利益）199万円、法人税0円を引いた税引後利益199万円に減価償却2万円を足し戻したキャッシュ生成額202万円（売上比18.9%）で内部留保に十分な余力。"}},{"year_key":"fy2025","year_label":"令和 7 年度","period":"2025-06 〜 2026-05","fiscal_year":2025,"data_available":true,"note":null,"全社合計":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":173546931,"revenue_breakdown":[{"name":"工事売上高","value":133213715},{"name":"就労移行支援売上高","value":40205770},{"name":"就労定着支援売上高","value":57760},{"name":"総務売上高","value":54686},{"name":"その他売上高","value":15000}],"variable_cost":74157259,"variable_breakdown":[{"name":"外注加工費(製)","value":71969281},{"name":"外注費","value":1953752},{"name":"産廃処分費","value":201650},{"name":"商品仕入高","value":21227},{"name":"荷造運賃","value":11349}],"gross_profit":99389672,"fixed_cost":84026631,"personnel_cost":37137302,"other_fixed_cost":46889329,"personnel_breakdown":[{"name":"給料賃金","value":20777390},{"name":"給料賃金(製)","value":5748892},{"name":"役員報酬","value":3600000},{"name":"法定福利費","value":3285386},{"name":"賞与","value":1144347},{"name":"法定福利費(製)","value":948088},{"name":"福利厚生費","value":821621},{"name":"福利厚生費(製)","value":577863},{"name":"賞与(製)","value":198778},{"name":"研修採用費","value":34937}],"other_fixed_breakdown":[{"name":"地代家賃","value":7510883},{"name":"備品・消耗品費","value":5753456},{"name":"保険料","value":3731847},{"name":"リース料","value":3453476},{"name":"車両費","value":3071940},{"name":"支払手数料","value":2882048},{"name":"旅費交通費","value":2742340},{"name":"通信費","value":2196217},{"name":"接待交際費","value":2022684},{"name":"水道光熱費","value":1789187},{"name":"管理諸費","value":1612400},{"name":"減価償却費","value":1110276},{"name":"雑費","value":1074418},{"name":"広告宣伝費","value":593760},{"name":"修繕費","value":479320},{"name":"租税公課","value":294035},{"name":"新聞図書費","value":63078},{"name":"諸会費","value":12364},{"name":"荷造運賃","value":11349}],"profit":15363041,"income_taxes":74261,"net_income":15288780,"depreciation":2212609,"cash_generation":17501389,"operating_income_ref":16790919,"non_operating_net_ref":-1427878,"ordinary_income_ref":15363041,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":37.4,"profit_margin_pct":8.9,"variable_cost_ratio_pct":42.7}},"commentary":"売上高17,354万円に対し変動費7,415万円（42.7%）を差し引いた粗利は9,938万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費3,713万円・その他固定費4,688万円・利益1,536万円。労働分配率37.4%は適正水準。利益率8.9%は平均的。利益（経常利益）1,536万円、法人税7万円を引いた税引後利益1,528万円に減価償却221万円を足し戻したキャッシュ生成額1,750万円（売上比10.1%）で内部留保に十分な余力。"},"工事部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":133213715,"revenue_breakdown":[{"name":"工事売上高","value":133213715}],"variable_cost":56922723,"variable_breakdown":[{"name":"外注加工費(製)","value":55243243},{"name":"外注費","value":1499690},{"name":"産廃処分費","value":154785},{"name":"商品仕入高","value":16294},{"name":"荷造運賃","value":8711}],"gross_profit":76290992,"fixed_cost":60341660,"personnel_cost":27903057,"other_fixed_cost":32438603,"personnel_breakdown":[{"name":"給料賃金","value":15948616},{"name":"給料賃金(製)","value":4412819},{"name":"法定福利費","value":2521845},{"name":"役員報酬","value":2160000},{"name":"賞与","value":878395},{"name":"法定福利費(製)","value":727747},{"name":"福利厚生費","value":630672},{"name":"福利厚生費(製)","value":443565},{"name":"賞与(製)","value":152581},{"name":"研修採用費","value":26817}],"other_fixed_breakdown":[{"name":"地代家賃","value":4506530},{"name":"備品・消耗品費","value":4416323},{"name":"リース料","value":2650870},{"name":"車両費","value":2358005},{"name":"保険料","value":2239108},{"name":"旅費交通費","value":2105006},{"name":"支払手数料","value":1729229},{"name":"接待交際費","value":1552602},{"name":"通信費","value":1317730},{"name":"水道光熱費","value":1073512},{"name":"管理諸費","value":967440},{"name":"雑費","value":824718},{"name":"減価償却費","value":666166},{"name":"広告宣伝費","value":455767},{"name":"修繕費","value":367924},{"name":"租税公課","value":176421},{"name":"新聞図書費","value":37847},{"name":"荷造運賃","value":8711},{"name":"諸会費","value":7418}],"profit":15949332,"income_taxes":57002,"net_income":15892330,"depreciation":1698387,"cash_generation":17590717,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":36.6,"profit_margin_pct":12.0,"variable_cost_ratio_pct":42.7},"operating_income_ref":15949332,"non_operating_net_ref":0,"ordinary_income_ref":15949332,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"工事部","_revenue_ratio":0.7676,"_hq_allocation":{"hq_cost_total":24802335,"hq_ratio":0.6,"hq_cost_allocated":14881401,"dept_own_fixed":45460259,"personnel_hq":2160000,"other_fixed_hq":12721401},"_cluster_note":"売上: 科目名フィルタ（工事売上高）/ 変動費: 全社 × 売上比率 76.8% / 固定費: 部門固有（全社固定費 - 本社費用 × 76.8%）+ 本社費用配賦（本社推定 24,802,335 円 × 60%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高13,321万円に対し変動費5,692万円（42.7%）を差し引いた粗利は7,629万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費2,790万円・その他固定費3,243万円・利益1,594万円。労働分配率36.6%は適正水準。利益率12.0%は良好。工事部の利益1,594万円は、本社経費1,488万円（全社本社経費の60%）を負担した結果の実質利益で、本社配賦前の単体利益は3,083万円。利益（経常利益）1,594万円、法人税5万円を引いた税引後利益1,589万円に減価償却169万円を足し戻したキャッシュ生成額1,759万円（売上比13.2%）で内部留保に十分な余力。"},"事業開発部":{"bp":{"period":{"start":"2025-06-01","end":"2026-05-31"},"revenue":40205770,"revenue_breakdown":[{"name":"就労移行支援売上高","value":40205770}],"variable_cost":17180077,"variable_breakdown":[{"name":"外注加工費(製)","value":16673187},{"name":"外注費","value":452627},{"name":"産廃処分費","value":46716},{"name":"商品仕入高","value":4918},{"name":"荷造運賃","value":2629}],"gross_profit":23025693,"fixed_cost":23641479,"personnel_cost":9209616,"other_fixed_cost":14431863,"personnel_breakdown":[{"name":"給料賃金","value":4813516},{"name":"役員報酬","value":1440000},{"name":"給料賃金(製)","value":1331851},{"name":"法定福利費","value":761128},{"name":"賞与","value":265112},{"name":"法定福利費(製)","value":219644},{"name":"福利厚生費","value":190346},{"name":"福利厚生費(製)","value":133874},{"name":"賞与(製)","value":46051},{"name":"研修採用費","value":8094}],"other_fixed_breakdown":[{"name":"地代家賃","value":3004353},{"name":"保険料","value":1492739},{"name":"備品・消耗品費","value":1332908},{"name":"支払手数料","value":1152819},{"name":"通信費","value":878487},{"name":"リース料","value":800070},{"name":"水道光熱費","value":715675},{"name":"車両費","value":711679},{"name":"管理諸費","value":644960},{"name":"旅費交通費","value":635320},{"name":"接待交際費","value":468597},{"name":"減価償却費","value":444110},{"name":"雑費","value":248911},{"name":"広告宣伝費","value":137557},{"name":"租税公課","value":117614},{"name":"修繕費","value":111044},{"name":"新聞図書費","value":25231},{"name":"諸会費","value":4946},{"name":"荷造運賃","value":2629}],"profit":-615786,"income_taxes":17204,"net_income":-632990,"depreciation":512597,"cash_generation":-120393,"metrics":{"gross_margin_pct":57.3,"labor_share_pct":40.0,"profit_margin_pct":-1.5,"variable_cost_ratio_pct":42.7},"operating_income_ref":-615786,"non_operating_net_ref":0,"ordinary_income_ref":-615786,"_source":"cluster_revenue_split_with_hq_allocation","_cluster":"事業開発部","_revenue_ratio":0.2317,"_hq_allocation":{"hq_cost_total":24802335,"hq_ratio":0.4,"hq_cost_allocated":9920934,"dept_own_fixed":13720545,"personnel_hq":1440000,"other_fixed_hq":8480934},"_cluster_note":"売上: 科目名フィルタ（就労移行支援売上高）/ 変動費: 全社 × 売上比率 23.2% / 固定費: 部門固有（全社固定費 - 本社費用 × 23.2%）+ 本社費用配賦（本社推定 24,802,335 円 × 40%）/ 本社費用は HQ_COST_KEYWORDS による科目名ベース近似 — 正確値は MF Web UI で本部・総務部の試算表を確認"},"commentary":"売上高4,020万円に対し変動費1,718万円（42.7%）を差し引いた粗利は2,302万円。粗利率57.3%は健全な高付加価値型。粗利の内訳は人件費920万円・その他固定費1,443万円・利益-615,786円。労働分配率40.0%は適正水準。損失（-1.5%）で構造改革が必要。事業開発部の利益-615,786円は、本社経費992万円（全社本社経費の40%）を負担した結果の実質利益で、本社配賦前の単体利益は930万円。利益（経常利益）-615,786円、法人税1万円を引いた税引後利益-632,990円に減価償却51万円を足し戻したキャッシュ生成額-120,393円（売上比-0.3%）は再投資余力が限定的。"}}]};
 window.__DEFAULT_FY_KEY__ = "fy2026";
 window.__currentFyKey = "fy2026";
 </script>
@@ -1060,14 +1084,14 @@ function renderCFExtension(bp, layout) {
       left:0; top:${profitTop}px;
       width:${CF_COL_W}px; height:${taxH}px;
     " title="法人税等 ${fmt(taxAmt)}">
-      ${taxLabelHidden ? '' : `<div class="cf-label">法人税等</div><div class="cf-amount">${fmt(taxAmt)}</div>`}
+      ${`<div class="cf-label">法人税等</div><div class="cf-amount">${fmt(taxAmt)}</div>`}
     </div>
     <!-- Col1: 税引後利益 -->
     <div class="cf-cell cell-net-income" style="
       left:0; top:${profitTop + taxH}px;
       width:${CF_COL_W}px; height:${netH}px;
     " title="税引後利益 ${fmtMan(netInc_man)}">
-      ${netLabelHidden ? '' : `<div class="cf-label">税引後利益</div><div class="cf-amount">${fmtMan(netInc_man)}</div>`}
+      ${`<div class="cf-label">税引後利益</div><div class="cf-amount">${fmtMan(netInc_man)}</div>`}
     </div>
 
     <!-- Col2: 減価償却費 -->
@@ -1075,14 +1099,14 @@ function renderCFExtension(bp, layout) {
       left:${CF_COL_W + COL_GAP}px; top:${col2Top}px;
       width:${CF_COL_W}px; height:${deprH}px;
     " title="減価償却費 ${fmtMan(depr_man)}">
-      ${deprLabelHidden ? '' : `<div class="cf-label">減価償却費</div><div class="cf-amount">${fmtMan(depr_man)}</div>`}
+      ${`<div class="cf-label">減価償却費</div><div class="cf-amount">${fmtMan(depr_man)}</div>`}
     </div>
     <!-- Col2: 税引後利益(再掲) -->
     <div class="cf-cell cell-net-income" style="
       left:${CF_COL_W + COL_GAP}px; top:${col2Top + deprH}px;
       width:${CF_COL_W}px; height:${netH2}px;
     " title="税引後利益 ${fmtMan(netInc_man)}">
-      ${netH2LabelHidden ? '' : `<div class="cf-label">税引後利益</div><div class="cf-amount">${fmtMan(netInc_man)}</div>`}
+      ${`<div class="cf-label">税引後利益</div><div class="cf-amount">${fmtMan(netInc_man)}</div>`}
     </div>
 
     <!-- Col3: CF 生成額 -->
@@ -1090,7 +1114,7 @@ function renderCFExtension(bp, layout) {
       left:${CF_COL_W * 2 + COL_GAP * 2}px; top:${col2Top}px;
       width:${CF_COL_W}px; height:${cfCol2H}px;
     " title="CF 生成額 ${fmtMan(cashGen_man)}">
-      ${cfGenLabelHidden ? '' : `<div class="cf-label">CF 生成額</div><div class="cf-amount">${fmtMan(cashGen_man)}</div><div class="cf-breakdown" style="font-size:0.72em; color:#555; margin-top:4px; padding-top:3px; border-top:1px dashed rgba(0,0,0,.18); line-height:1.2;">税引後利益 ${fmtMan(netInc_man)}<br>＋ 減価償却 ${fmtMan(depr_man)}</div>`}
+      ${`<div class="cf-label">CF 生成額</div><div class="cf-amount">${fmtMan(cashGen_man)}</div><div class="cf-breakdown" style="font-size:0.72em; color:#555; margin-top:4px; padding-top:3px; border-top:1px dashed rgba(0,0,0,.18); line-height:1.2;">税引後利益 ${fmtMan(netInc_man)}<br>＋ 減価償却 ${fmtMan(depr_man)}</div>`}
     </div>
   `;
 
@@ -1331,7 +1355,7 @@ function buildPuzzle(bp) {
         </div>
 
         <!-- ⑧ 粗利率タグ（粗利セル右下） -->
-        <div class="inline-tag" id="tag-gm" style="
+        <div class="inline-tag" id="tag-gm" data-anchor=".cell-gross" style="
           left:${(grossLeft + grossPct - 1).toFixed(2)}%;
           top:${PUZZLE_H - 32}px;
           transform:translateX(-100%);
@@ -1341,7 +1365,7 @@ function buildPuzzle(bp) {
         </div>
 
         <!-- ⑨ 労働分配率タグ（人件費セル右下、HQ オーバーレイと干渉しない位置） -->
-        <div class="inline-tag" id="tag-ls" style="
+        <div class="inline-tag" id="tag-ls" data-anchor=".cell-personnel" style="
           left:${(fixedSubLeft + fixedSubPct - 1).toFixed(2)}%;
           top:${vcH + personnelH - 32}px;
           transform:translateX(-100%);
@@ -1494,8 +1518,265 @@ function render(bp, commentary) {
 
   updateAllocationNote(_currentSelectVal, bp);
 
-  requestAnimationFrame(() => renderCFExtension(bp, layout));
+  requestAnimationFrame(() => {
+    renderCFExtension(bp, layout);
+    requestAnimationFrame(() => {
+      if (window.__autoLayoutLabels) window.__autoLayoutLabels();
+    });
+  });
 }
+
+/* ═══════════════════════════════════════════════════════
+ * 自動レイアウト
+ *   描画後に実際の矩形を測り、
+ *     ① 本社経費バンドを避けてセル内容を寄せる
+ *     ② それでもセルからはみ出す内容はピルとして外へ出す
+ *     ③ ピル・インラインタグを空いている場所へ逃がす
+ *     ④ 移動したものは引き出し線で元のセルへ結ぶ
+ *   …を行う。しきい値をベタ書きせず、重なりは実測で判定する。
+ * ═══════════════════════════════════════════════════════ */
+(function () {
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const OBSTACLES =
+    '.cell-label,.cell-amount,.cf-label,.cf-amount,.cf-breakdown,' +
+    '.hq-overlay-label,.hq-overlay-pct,.cf-section-mini';
+  const PAD  = 3;     // 重なり判定の余白
+  const GAP  = 10;    // ピルとセルの隙間
+  const LINE = 'rgba(100,116,139,.8)';
+
+  const hit = (a, b, p) =>
+    !(a.r <= b.l - p || a.l >= b.r + p || a.b <= b.t - p || a.t >= b.b + p);
+
+  /* 候補オフセット：近い順。上方向はやや不利にして「下へ逃がす」を優先 */
+  const OFFSETS = (() => {
+    const o = [];
+    for (let ry = 0; ry <= 18; ry++) {
+      for (let rx = 0; rx <= 14; rx++) {
+        for (const sy of (ry ? [1, -1] : [0])) {
+          for (const sx of (rx ? [1, -1] : [0])) {
+            const dx = sx * rx * 9, dy = sy * ry * 7;
+            o.push([dx, dy, Math.abs(dx) * 1.2 + (dy > 0 ? dy : -dy * 1.3)]);
+          }
+        }
+      }
+    }
+    o.sort((a, b) => a[2] - b[2]);
+    return o;
+  })();
+
+  function unionRect(els) {
+    let l = Infinity, t = Infinity, r = -Infinity, b = -Infinity;
+    els.forEach(e => {
+      const q = e.getBoundingClientRect();
+      l = Math.min(l, q.left); t = Math.min(t, q.top);
+      r = Math.max(r, q.right); b = Math.max(b, q.bottom);
+    });
+    return { left: l, top: t, right: r, bottom: b };
+  }
+
+  /* 引き出し線の始点・終点（ピル外周 → セル外周の最近点） */
+  function leaderEnds(rect, cell) {
+    const fcx = (rect.l + rect.r) / 2, fcy = (rect.t + rect.b) / 2;
+    const ax = Math.max(cell.l + 2, Math.min(fcx, cell.r - 2));
+    const ay = Math.max(cell.t + 2, Math.min(fcy, cell.b - 2));
+    return { sx: Math.max(rect.l, Math.min(ax, rect.r)),
+             sy: Math.max(rect.t, Math.min(ay, rect.b)), ax: ax, ay: ay };
+  }
+
+  /* 引き出し線が横切ってしまうラベルの数 */
+  function crossings(rect, cell, obst) {
+    const e = leaderEnds(rect, cell);
+    const len = Math.hypot(e.ax - e.sx, e.ay - e.sy);
+    if (len < 6) return 0;
+    const n = Math.min(48, Math.max(6, Math.round(len / 4)));
+    let cnt = 0;
+    obst.forEach(o => {
+      for (let i = 1; i < n; i++) {
+        const t = i / n;
+        const px = e.sx + (e.ax - e.sx) * t, py = e.sy + (e.ay - e.sy) * t;
+        if (px >= o.l - 1 && px <= o.r + 1 && py >= o.t - 1 && py <= o.b + 1) {
+          cnt++; return;
+        }
+      }
+    });
+    return cnt;
+  }
+
+  const hide = els => els.forEach(e => {
+    e.style.display = 'none';
+    e.setAttribute('data-auto-hidden', '1');
+  });
+
+  function resolve(cont) {
+    const cr = cont.getBoundingClientRect();
+    if (!cr.width || !cr.height) return;
+    const W = cr.width, H = cr.height;
+    const rel = q => ({ l: q.left - cr.left, t: q.top - cr.top,
+                        r: q.right - cr.left, b: q.bottom - cr.top });
+    const floats = [];
+
+    /* ── ① / ② セル内容 ── */
+    cont.querySelectorAll('.bp-cell, .cf-cell, .fixed-sub-cell').forEach(cell => {
+      const kids = Array.prototype.filter.call(
+        cell.children, k => !k.classList.contains('hq-overlay'));
+      if (!kids.length) return;
+      const cellR = cell.getBoundingClientRect();
+      if (cellR.height < 3 || cellR.width < 3) { hide(kids); return; }
+
+      /* 本社経費バンドの下へ寄せる（セルからはみ出さない範囲で目一杯） */
+      const band = cell.querySelector('.hq-overlay');
+      let bandTexts = [];
+      if (band) {
+        bandTexts = Array.prototype.slice
+          .call(band.querySelectorAll('.hq-overlay-label,.hq-overlay-pct'))
+          .map(e => {
+            const q = e.getBoundingClientRect();
+            return { l: q.left, t: q.top, r: q.right, b: q.bottom };
+          });
+        const bR = band.getBoundingClientRect();
+        const u0 = unionRect(kids);
+        const want = ((bR.bottom + 2) + (cellR.bottom - 2)) / 2 - (u0.top + u0.bottom) / 2;
+        const room = (cellR.bottom - 1) - u0.bottom;
+        const d = Math.min(want, room);
+        if (d > 0.5) {
+          kids.forEach(k => {
+            k.style.transform = 'translateY(' + d.toFixed(1) + 'px)';
+            k.setAttribute('data-auto-shift', '1');
+          });
+        }
+      }
+
+      /* flex で押し潰された分も見るため、内容の「本来の高さ」で判定する */
+      let need = 0, ellipsis = false;
+      kids.forEach(k => {
+        const cs = getComputedStyle(k);
+        need += k.scrollHeight + (parseFloat(cs.marginTop) || 0)
+                               + (parseFloat(cs.marginBottom) || 0);
+        if (k.scrollWidth > k.clientWidth + 1) ellipsis = true;
+      });
+      const cc = getComputedStyle(cell);
+      const avail = cellR.height - (parseFloat(cc.paddingTop) || 0)
+                                 - (parseFloat(cc.paddingBottom) || 0);
+
+      const u = unionRect(kids);
+      const uu = { l: u.left, t: u.top, r: u.right, b: u.bottom };
+      const over = need > avail + 0.5 || ellipsis ||
+                   u.top    < cellR.top    - 0.5 || u.bottom > cellR.bottom + 0.5 ||
+                   u.left   < cellR.left   - 0.5 || u.right  > cellR.right  + 0.5;
+      const clash = bandTexts.some(b => hit(uu, b, 2));
+      if (!over && !clash) return;
+
+      const pill = document.createElement('div');
+      pill.className = 'auto-out';
+      kids.forEach(k => {
+        const c = k.cloneNode(true);
+        c.style.position = '';
+        c.style.transform = '';
+        c.style.color = getComputedStyle(k).color;
+        pill.appendChild(c);
+      });
+      hide(kids);
+      pill.style.left = '0px';
+      pill.style.top = '0px';
+      pill.style.visibility = 'hidden';
+      cont.appendChild(pill);
+      floats.push({ el: pill, cell: rel(cellR), pill: true });
+    });
+
+    /* ── インラインタグ ── */
+    cont.querySelectorAll('.inline-tag').forEach(tag => {
+      const sel = tag.getAttribute('data-anchor');
+      const src = sel ? cont.querySelector(sel) : null;
+      floats.push({ el: tag, cell: src ? rel(src.getBoundingClientRect()) : null,
+                    pill: false });
+    });
+    if (!floats.length) return;
+
+    /* ── ③ 障害物を集めて配置 ── */
+    const obst = Array.prototype.slice
+      .call(cont.querySelectorAll(OBSTACLES))
+      .filter(e => !e.closest('.auto-out') && !e.hasAttribute('data-auto-hidden'))
+      .map(e => rel(e.getBoundingClientRect()));
+
+    const taken = [];
+    floats.forEach(f => {
+      const el = f.el;
+      const r0 = rel(el.getBoundingClientRect());   // transform 適用後の実位置
+      const w = r0.r - r0.l, h = r0.b - r0.t;
+      el.style.transform = 'none';
+      let x = r0.l, y = r0.t;
+      if (f.pill && f.cell) {                        // ピルの初期位置はセルの真上
+        x = (f.cell.l + f.cell.r) / 2 - w / 2;
+        y = f.cell.t - GAP - h;
+        if (y < 1) y = f.cell.b + GAP;
+      }
+      /* 空いている候補を近い順に集める */
+      const cands = [];
+      for (let i = 0; i < OFFSETS.length && cands.length < 60; i++) {
+        const c = { l: x + OFFSETS[i][0], t: y + OFFSETS[i][1] };
+        c.r = c.l + w; c.b = c.t + h;
+        if (c.l < 1 || c.t < 1 || c.r > W - 1 || c.b > H - 1) continue;
+        if (obst.some(o => hit(c, o, PAD)))  continue;
+        if (taken.some(o => hit(c, o, PAD))) continue;
+        cands.push([c, OFFSETS[i][2]]);
+      }
+      /* 近さ＋「引き出し線が他のラベルを横切らないこと」で選ぶ */
+      let best = null, bestScore = Infinity;
+      for (let i = 0; i < cands.length; i++) {
+        const sc = cands[i][1] +
+                   (f.cell ? 26 * crossings(cands[i][0], f.cell, obst) : 0);
+        if (sc < bestScore) { bestScore = sc; best = cands[i][0]; }
+      }
+      if (!best) best = { l: x, t: y, r: x + w, b: y + h };
+      el.style.left = best.l.toFixed(1) + 'px';
+      el.style.top  = best.t.toFixed(1) + 'px';
+      el.style.visibility = '';
+      taken.push(best);
+      f.rect  = best;
+      f.moved = Math.abs(best.l - r0.l) > 1 || Math.abs(best.t - r0.t) > 1;
+    });
+
+    /* ── ④ 引き出し線 ── */
+    const svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('class', 'auto-svg');
+    svg.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;' +
+                        'pointer-events:none;z-index:28;overflow:visible';
+    let drawn = 0;
+    floats.forEach(f => {
+      if (!f.cell || (!f.pill && !f.moved)) return;
+      const e = leaderEnds(f.rect, f.cell);
+      const sx = e.sx, sy = e.sy, ax = e.ax, ay = e.ay;
+      if (Math.hypot(ax - sx, ay - sy) < 6) return;
+      const ln = document.createElementNS(SVGNS, 'line');
+      ln.setAttribute('x1', sx.toFixed(1)); ln.setAttribute('y1', sy.toFixed(1));
+      ln.setAttribute('x2', ax.toFixed(1)); ln.setAttribute('y2', ay.toFixed(1));
+      ln.setAttribute('stroke', LINE);
+      ln.setAttribute('stroke-width', '1');
+      ln.setAttribute('stroke-dasharray', '3 3');
+      const dot = document.createElementNS(SVGNS, 'circle');
+      dot.setAttribute('cx', ax.toFixed(1)); dot.setAttribute('cy', ay.toFixed(1));
+      dot.setAttribute('r', '2.5'); dot.setAttribute('fill', LINE);
+      svg.appendChild(ln); svg.appendChild(dot); drawn++;
+    });
+    if (drawn) cont.appendChild(svg);
+  }
+
+  window.__autoLayoutLabels = function () {
+    const wrap = document.querySelector('.puzzle-row-wrap');
+    if (!wrap) return;
+    wrap.querySelectorAll('.auto-out, .auto-svg').forEach(e => e.remove());
+    wrap.querySelectorAll('[data-auto-hidden]').forEach(e => {
+      e.style.display = ''; e.removeAttribute('data-auto-hidden');
+    });
+    wrap.querySelectorAll('[data-auto-shift]').forEach(e => {
+      e.style.transform = ''; e.removeAttribute('data-auto-shift');
+    });
+    ['#puzzle-canvas', '#cf-extension-row'].forEach(sel => {
+      const c = wrap.querySelector(sel);
+      if (c) { try { resolve(c); } catch (err) { console.warn('autoLayout', err); } }
+    });
+  };
+})();
 
 /* ═══════════════════════════════════════════════════════
  * リサイズ対応
